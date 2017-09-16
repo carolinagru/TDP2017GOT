@@ -11,7 +11,8 @@ public class Mapa extends JFrame {
 
 	private JPanel contentPane;
 	private int anchoPantalla;
-	private int altoPantalla;
+	private int altoPantalla; 
+	private Logica logica;
 	/**
 	 * Launch the application.
 	 */

@@ -19,7 +19,7 @@ public class Logica {
 	protected LinkedList<Policia> policiasMapa;
 	protected LinkedList<Objeto> objetosMapa;
 	protected Celda[][] matrizMapa;
-	protected JPanel mapa;
+	protected JPanel mapaPanel;
 	
 	public Logica(JPanel panel){
 		
@@ -28,7 +28,7 @@ public class Logica {
 		policiasMapa= new LinkedList();
 		objetosMapa= new LinkedList();
 		matrizMapa= new Celda[6][10];
-		mapa=panel;
+		mapa = panel;
 		
 		crearMapa();
 		
@@ -60,11 +60,12 @@ public class Logica {
 	}
 	
 	public void crearAliens() {
-		//creamos aliens de tipo 1 y 2, dos listas para tipo 1 y 2 (primer orda)
+	//creamos aliens de tipo 1 y 2, dos listas para tipo 1 y 2 (primer orda)
 	  	
 		
 		
-	}
+	}//--------------------- Ver ----------------------------
+	// Ver como posicionar los Policias en el Panel mapaPanel.
 	
 	public void crearPolicia1(int fila, int columna) {
 		
@@ -72,22 +73,30 @@ public class Logica {
 		matrizMapa[fila][columna].setElemento(p1);
 		mapa.add(matrizMapa[fila][columna].getElemento().getGrafico());
 		
+		
 	}
     public void crearPolicia2(int fila, int columna) {
-		
     	Policia p2= new P2();
+    	matrizMapa[fila][columna].setElemento(p2);
+    	mapa.add(matrizMapa[fila][columna].getElemento().getGrafico());
+    	
 	}
     public void crearPolicia3(int fila, int columna) {
     	
     	Policia p3= new P3();
+    	matrizMapa[fila][columna].setElemento(p3);
+    	mapa.add(matrizMapa[fila][columna].getElemento().getGrafico());
     }
     public void crearPolicia4(int fila, int columna) {
-	
+    	matrizMapa[fila][columna].setElemento(p4);
+    	mapa.add(matrizMapa[fila][columna].getElemento().getGrafico());
     	Policia p4= new P4();
     }
     public void crearPolicia5(int fila, int columna) {
-	
     	Policia p5= new P5();
+    	matrizMapa[fila][columna].setElemento(p5);
+    	mapa.add(matrizMapa[fila][columna].getElemento().getGrafico());
+    	
     }
 	
 	

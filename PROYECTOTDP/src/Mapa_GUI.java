@@ -8,7 +8,7 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.GridLayout;
 
-public class Mapa extends JFrame {
+public class Mapa_GUI extends JFrame {
 
 	private JPanel contentPane;
 	private int anchoPantalla;
@@ -26,7 +26,7 @@ public class Mapa extends JFrame {
 			public void run() {
 				try {
 					
-					Mapa frame = new Mapa();
+					Mapa_GUI frame = new Mapa_GUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,7 +38,7 @@ public class Mapa extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Mapa() {
+	public Mapa_GUI() {
 		
 		
 		anchoPantalla = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;

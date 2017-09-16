@@ -10,7 +10,8 @@ import java.awt.Color;
 public class Mapa extends JFrame {
 
 	private JPanel contentPane;
-
+	private int anchoPantalla;
+	private int altoPantalla;
 	/**
 	 * Launch the application.
 	 */
@@ -38,13 +39,14 @@ public class Mapa extends JFrame {
 	public Mapa() {
 		
 		
-		int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
-	    int alto = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
+		anchoPantalla = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+		altoPantalla = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
 
-        this.setBounds((ancho  ) - (this.getWidth()   ), (alto   ) - (this.getHeight()    ), 500, 500);
-		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		
+		this.setBounds((anchoPantalla / 3) - (getWidth() / 2), (altoPantalla / 6) - (getHeight() / 2), 1000, 800);
+		
+	//	setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -52,8 +54,21 @@ public class Mapa extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(0, 0, 0), 3));
-		panel.setBounds(10, 11, 414, 36);
+		panel.setBounds(0, 0, 984, 49);
 		contentPane.add(panel);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 3));
+		panel_1.setBounds(0, 692, 984, 49);
+		contentPane.add(panel_1);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel_2.setBounds(0, 48, 67, 646);
+		contentPane.add(panel_2);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBounds(65, 48, 919, 646);
+		contentPane.add(panel_3);
 	}
-
 }

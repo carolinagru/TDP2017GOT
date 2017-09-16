@@ -7,7 +7,7 @@ public abstract class Premio {
 	protected int tiempo;
 	protected Position posicion;
 	
-	public void activarPremio();
+	//public void activarPremio();
 	
 	
 	

@@ -71,5 +71,8 @@ public class Mapa extends JFrame {
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(65, 48, 919, 646);
 		contentPane.add(panel_3);
+		
+		logica= new Logica(panel_3);
+		
 	}
 }

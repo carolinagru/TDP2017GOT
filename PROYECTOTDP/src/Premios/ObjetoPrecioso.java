@@ -1,5 +1,5 @@
 package Premios;
 
-public abstract class ObjetoPrecioso {
+public abstract class ObjetoPrecioso extends Premio {
 
 }

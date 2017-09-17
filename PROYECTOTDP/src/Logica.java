@@ -37,7 +37,7 @@ public class Logica {
 	public void crearMapa() {
 	 //creamos el mapa con una matriz de celdas	
 		for (int i=0; i < matrizMapa.length; i++) {
-			for (int j=0; i < matrizMapa[i].length; j++) {
+			for (int j=0; j < matrizMapa[i].length; j++) {
 				matrizMapa[i][j]= new Celda(i,j);
 			}
 		}

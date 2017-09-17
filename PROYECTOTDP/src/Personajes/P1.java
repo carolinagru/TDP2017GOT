@@ -11,21 +11,25 @@ public class P1 extends Policia {
 	protected static int precio = 25;
 	protected Icon imagen;
 	protected JLabel label;
+	protected int fila;
+	protected int columna;
+	protected int width=32;
+	protected int height=32;
 	
-	public P1() {
+	public P1(int x, int y) {
 	  
-		imagen = new ImageIcon(getClass().getResource("/Sprites/Alien Caminando/0.png"));
+		fila=x;
+		columna=y;
+		imagen = new ImageIcon("C:\\Users\\Carol\\Documents\\GitHub\\TDP2017GOT\\PROYECTOTDP\\src\\Sprites\\Sprite Alien\\Alien Caminando\\10.png");
 		
 	}
 	
 public JLabel getGrafico() {
 		
-		label= new JLabel();
-		ImageIcon aux=(ImageIcon) imagen;
-		Icon icono = new ImageIcon(aux.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
- 	    label.setIcon(icono);
-		
-		return label;
-	}
+	label = new JLabel(imagen);
+	this.label.setBounds(this.fila, this.columna, width, height);
+	return label;
+	
+}
 
 }

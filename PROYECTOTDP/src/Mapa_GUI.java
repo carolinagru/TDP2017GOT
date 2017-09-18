@@ -70,11 +70,13 @@ public class Mapa_GUI extends JFrame {
 		contentPane.add(panel_2);
 		
 		JPanel panel_3 = new JPanel();
+		//panel_3.setBounds(65, 48, 172, 646);
 		panel_3.setBounds(65, 48, 172, 646);
+		
 		contentPane.add(panel_3);
 		
 		logica= new Logica(panel_3);
-		panel_3.setLayout(new GridLayout(1, 0, 0, 0));
+		//panel_3.setLayout(new GridLayout(1, 0, 0, 0));
 		
 	}
 }

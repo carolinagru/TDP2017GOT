@@ -7,24 +7,28 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class P2 extends Policia{
-	
+
 	protected static int precio = 30;
 	protected Icon imagen;
 	protected JLabel label;
+	protected int fila;
+	protected int columna;
+	protected int width=32;
+	protected int height=32;
 	
-	public P2() {
-	  
-		imagen = new ImageIcon(getClass().getResource("/Sprites/Alien Caminando/0.png"));
+	
+	public P2(int x, int y) {
+		fila = x;
+		columna = y;
+		imagen = new ImageIcon(getClass().getResource("/Sprites/Sprite Soldado/GIF's/Soldado Disparando.gif"));
 		
 	}
 	
 public JLabel getGrafico() {
 		
-		label= new JLabel();
-		ImageIcon aux=(ImageIcon) imagen;
-		Icon icono = new ImageIcon(aux.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
- 	    label.setIcon(icono);
-		
+		label= new JLabel(imagen);
+		this.label.setBounds(this.fila, this.columna, width, height);
+		 
 		return label;
 	}
 

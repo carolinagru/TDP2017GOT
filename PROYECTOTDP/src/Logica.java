@@ -46,6 +46,10 @@ public class Logica {
 	 
 		insertarObjetos();
 		crearPolicia1(2,2);
+		crearPolicia2(1,1);
+		crearPolicia3(0,0);
+		crearPolicia4(3,0);
+		crearPolicia5(4,0);
 		
 		
 	}
@@ -78,27 +82,27 @@ public class Logica {
 		
 	}
     public void crearPolicia2(int fila, int columna) {
-    	Policia p2= new P2();
+    	Policia p2= new P2(fila, columna);
     	matrizMapa[fila][columna].setElemento(p2);
     	mapaPanel.add(matrizMapa[fila][columna].getElemento().getGrafico());
     	
 	}
     public void crearPolicia3(int fila, int columna) {
     	
-    	Policia p3= new P3();
+    	Policia p3= new P3(fila,columna);
     	matrizMapa[fila][columna].setElemento(p3);
     	mapaPanel.add(matrizMapa[fila][columna].getElemento().getGrafico());
     }
     public void crearPolicia4(int fila, int columna) {
     	
-    	Policia p4= new P4();
+    	Policia p4= new P4(fila,columna);
     	matrizMapa[fila][columna].setElemento(p4);
     	mapaPanel.add(matrizMapa[fila][columna].getElemento().getGrafico());
     	
     }
     public void crearPolicia5(int fila, int columna) {
     	
-    	Policia p5= new P5();
+    	Policia p5= new P5(fila,columna);
     	matrizMapa[fila][columna].setElemento(p5);
     	mapaPanel.add(matrizMapa[fila][columna].getElemento().getGrafico());
     	

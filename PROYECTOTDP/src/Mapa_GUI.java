@@ -7,6 +7,10 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.GridLayout;
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Mapa_GUI extends JFrame {
 
@@ -46,7 +50,7 @@ public class Mapa_GUI extends JFrame {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		this.setBounds((anchoPantalla / 3) - (getWidth() / 2), (altoPantalla / 6) - (getHeight() / 2), 1000, 800);
+		this.setBounds((anchoPantalla / 3) - (getWidth() / 2), (altoPantalla / 6) - (getHeight() / 2), 1000, 681);
 		
 	//	setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -55,23 +59,18 @@ public class Mapa_GUI extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBorder(new LineBorder(new Color(0, 0, 0), 3));
+		panel.setBorder(null);
 		panel.setBounds(0, 0, 984, 49);
 		contentPane.add(panel);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 3));
-		panel_1.setBounds(0, 692, 984, 49);
-		contentPane.add(panel_1);
-		
 		JPanel panel_2 = new JPanel();
-		panel_2.setBorder(new LineBorder(new Color(0, 0, 0)));
-		panel_2.setBounds(0, 48, 67, 646);
+		panel_2.setBorder(null);
+		panel_2.setBounds(0, 48, 67, 594);
 		contentPane.add(panel_2);
 		
 		JPanel panel_3 = new JPanel();
 		//panel_3.setBounds(65, 48, 172, 646);
-		panel_3.setBounds(65, 48, 172, 646);
+		panel_3.setBounds(66, 48, 918, 594);
 		
 		contentPane.add(panel_3);
 		

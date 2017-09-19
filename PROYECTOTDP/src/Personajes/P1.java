@@ -20,7 +20,7 @@ public class P1 extends Policia {
 	  
 		fila=x;
 		columna=y;
-		imagen = new ImageIcon(getClass().getResource("/Sprites/Sprite Soldado/GIF's/Soldado Disparando.gif"));
+		imagen = new ImageIcon(getClass().getResource("/Sprites/Sprite Soldado/GIF's/Soldado Disparando/0.png"));
 	}
 	
 public JLabel getGrafico() {

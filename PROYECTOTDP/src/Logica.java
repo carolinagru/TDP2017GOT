@@ -1,9 +1,19 @@
 
+import java.awt.Point;
+import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Random;
 
 import javax.swing.JPanel;
 
 import Objetos.Objeto;
+import Objetos.Obstaculo;
+import Personajes.A1;
+import Personajes.A2;
+import Personajes.A3;
+import Personajes.A4;
+import Personajes.A5;
+import Personajes.A6;
 import Personajes.Alien;
 import Personajes.P1;
 import Personajes.P2;
@@ -67,12 +77,53 @@ public class Logica {
 	
 	public void crearAliens() {
 	//creamos aliens de tipo 1 y 2, dos listas para tipo 1 y 2 (primer orda)
+	/*...
+	  LinkedList listaA1= new LinkedList<Alien>();
+	  LinkedList listaA2= new LinkedList<Alien>();
+	  int fila;
+	  Random num= new Random();
+	  fila=1+num.nextInt(6);
+	  
+	  	for(int i=0; i < 10; i++) {
+	  		listaA1.addLast(new A1());
+	  		listaA2.addLast(new A2());
+	  	}
+	  	  	
+	  	
+	  	if (matrizMapa[fila][9].getElemento() != null) {
+	  		
+	  	
+	  	matrizMapa[fila][9].setElemento(listaA1.getFirst());
+		mapaPanel.add(matrizMapa[fila][9].getElemento().getGrafico());
+		aliensMapa.addLast(listaA1.getFirst());
+		listaA1.removeFirst();
+	  	}
+	  	
+	  	moverAlien(aliensMapa.getFirst());
+	  	
 	  	
 		
+	  	
+	  	
+	  	
+	  	
+	  
+	  
+		...*/
 		
 	}//--------------------- Ver ----------------------------
 	// Ver como posicionar los Policias en el Panel mapaPanel.
+	public void moverAlien(Alien a) {
+
 	
+		for (int i=10; i > 0; i++ ) {
+			
+		}
+		
+	}
+
+	
+
 	public void crearPolicia1(int fila, int columna) {
 		
 		Policia p1= new P1(fila,columna);

@@ -1,8 +1,21 @@
 package Personajes;
 
+import javax.swing.ImageIcon;
+
 public class A6 extends Alien{
 	
 	protected static int moneda=40;
 	protected static int punto=30;
 
+
+	public A6() {
+		
+		
+		imagen = new ImageIcon(getClass().getResource("/Sprites/Sprite Soldado/GIF's/Alien-Caminando-2.gif"));
+	}
+	
+	public void setPosicion(int x, int y) {
+		fila=x;
+		columna=y;
+	}
 }

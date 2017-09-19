@@ -56,27 +56,25 @@ public class Mapa_GUI extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(0, 0, 0), 3));
-		panel.setBounds(0, 0, 984, 49);
+		panel.setBounds(0, 0, 984, 100);
 		contentPane.add(panel);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 3));
-		panel_1.setBounds(0, 692, 984, 49);
+		panel_1.setBounds(0, 692, 984, 200);
 		contentPane.add(panel_1);
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new LineBorder(new Color(0, 0, 0)));
-		panel_2.setBounds(0, 48, 67, 646);
+		panel_2.setBounds(0, 48, 100, 646);
 		contentPane.add(panel_2);
 		
 		JPanel panel_3 = new JPanel();
-		//panel_3.setBounds(65, 48, 172, 646);
-		panel_3.setBounds(65, 48, 172, 646);
-		
+		panel_3.setBounds(65, 48,200, 300);
 		contentPane.add(panel_3);
-		
+		 
 		logica= new Logica(panel_3);
-		//panel_3.setLayout(new GridLayout(1, 0, 0, 0));
+		//panel_3.setLayout(new GridLayout(5, 5, 10, 10));
 		
 	}
 }

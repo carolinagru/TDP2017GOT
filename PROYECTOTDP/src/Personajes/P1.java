@@ -17,7 +17,7 @@ public class P1 extends Policia {
 	protected int height=32;
 	
 	public P1(int x, int y) {
-	  
+	  System.out.println("Entre X:"+x);
 		fila=x;
 		columna=y;
 		imagen = new ImageIcon(getClass().getResource("/Sprites/Sprite Soldado/GIF's/Soldado Disparando.gif"));
@@ -26,7 +26,7 @@ public class P1 extends Policia {
 public JLabel getGrafico() {
 		
 	label = new JLabel(imagen);
-	this.label.setBounds(this.fila, this.columna, width, height);
+		this.label.setBounds(this.fila, this.columna, width, height);
 	return label;
 	
 }

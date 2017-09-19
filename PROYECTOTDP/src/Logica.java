@@ -29,7 +29,7 @@ public class Logica {
 		aliensMapa=new LinkedList();
 		policiasMapa= new LinkedList();
 		objetosMapa= new LinkedList();
-		matrizMapa= new Celda[6][10];
+		matrizMapa= new Celda[200][200];
 		mapaPanel = panel;
 		
 		crearMapa();
@@ -45,12 +45,13 @@ public class Logica {
 		}
 	 
 		insertarObjetos();
+		
 		crearPolicia1(2,2);
-		crearPolicia2(1,1);
+	    crearPolicia2(1,1);
 		crearPolicia3(0,0);
 		crearPolicia4(3,0);
 		crearPolicia5(4,0);
-		
+		crearPolicia5(4,0);
 		
 	}
 	
@@ -78,6 +79,7 @@ public class Logica {
 		Policia p1= new P1(fila,columna);
 		matrizMapa[fila][columna].setElemento(p1);
 		mapaPanel.add(matrizMapa[fila][columna].getElemento().getGrafico());
+	
 		
 		
 	}

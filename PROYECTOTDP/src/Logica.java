@@ -103,7 +103,7 @@ public class Logica {
 	  	
 	  	
 		
-	  	
+	  
 	  	
 	  	
 	  	
@@ -112,7 +112,7 @@ public class Logica {
 		...*/
 		
 	}//--------------------- Ver ----------------------------
-	// Ver como posicionar los Policias en el Panel mapaPanel.
+	// Ver como posicionar los Policias en el Panel mapaPanel. kyfuykvbiunonmmnjhbgv
 	public void moverAlien(Alien a) {
 
 	

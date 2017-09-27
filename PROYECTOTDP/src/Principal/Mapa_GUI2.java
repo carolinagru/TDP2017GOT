@@ -1,3 +1,4 @@
+package Principal;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -18,6 +19,8 @@ public class Mapa_GUI2 extends JFrame {
 	private Logica logica;
 	private JPanel contentPane;
 	private JTextField txtComprar;
+	
+	private Logica j;
 
 	/**
 	 * Launch the application.
@@ -41,7 +44,7 @@ public class Mapa_GUI2 extends JFrame {
 	public Mapa_GUI2() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 700, 700);
+		setBounds(100, 100, 1000, 800);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -91,7 +94,7 @@ public class Mapa_GUI2 extends JFrame {
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBorder(new LineBorder(new Color(0, 0, 0)));
-		panel_3.setBounds(111, 106, 573, 446);
+		panel_3.setBounds(111, 106,900 , 210);
 		contentPane.add(panel_3);
 		
 		logica= new Logica(panel_3);
@@ -103,6 +106,8 @@ public class Mapa_GUI2 extends JFrame {
 				
 			}
 		});
+		
+
 		btnS.setBounds(10, 22, 59, 23);
 		panel_2.add(btnS);
 		
@@ -121,8 +126,10 @@ public class Mapa_GUI2 extends JFrame {
 		JButton btnS_4 = new JButton("S5");
 		btnS_4.setBounds(286, 22, 59, 23);
 		panel_2.add(btnS_4);
-		
-		
+
+
+		j = new Logica(panel_3);
+		 
 		
 		
 		//Interaccion con logica

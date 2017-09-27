@@ -1,20 +1,20 @@
 package Personajes;
-
+ 
 import javax.swing.ImageIcon;
+
+import Graficos.Alien2Grafico;
+import Graficos.Alien3Grafico;
+import Principal.Celda;
 
 public class A2 extends Alien{
 	
-	protected static int moneda=20;
-	protected static int punto=10;
+	protected static int moneda=25;
+	protected static int punto=15;
 
-	public A2() {
+	public A2( Celda pos ) {		
+		super(pos);
+		grafico = new Alien2Grafico(pos.getX(), pos.getY());
 		
-		
-		imagen = new ImageIcon(getClass().getResource("/Sprites/Sprite Soldado/GIF's/Alien-Caminando-2.gif"));
 	}
 	
-	public void setPosicion(int x, int y) {
-		fila=x;
-		columna=y;
-	}
 }

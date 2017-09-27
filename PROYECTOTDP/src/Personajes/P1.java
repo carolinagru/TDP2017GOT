@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 package Personajes;
 
 import java.awt.Image;
@@ -6,55 +6,19 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-
-public class P1 extends Policia {
-	
-	protected static int precio = 25;
-	protected Icon imagen;
-	protected JLabel label;
-	protected int fila;
-	protected int columna;
-	protected int width=32;
-	protected int height=32;
-	
-	public P1(int x, int y) {
-	  System.out.println("Entre X:"+x);
-		fila=x;
-		columna=y;
-		imagen = new ImageIcon(getClass().getResource("/Sprites/Sprite Soldado/GIF's/Soldado Disparando.gif"));
-	}
-	
-public JLabel getGrafico() {
-		
-	label = new JLabel(imagen);
-		this.label.setBounds(this.fila, this.columna, width, height);
-	return label;
-	
-}
-
-}
-=======
-package Personajes;
-
-import java.awt.Image;
-
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+import Graficos.Soldado1Grafico;
+import Principal.Celda;
 
 public class P1 extends Policia {
 	
 	protected static int precio = 25;
 
 	
-	public P1(int x, int y) {
-	  
-		fila=x;
-		columna=y;
-		imagen = new ImageIcon(getClass().getResource("/Sprites/Sprite Soldado/GIF's/Soldado Disparando.gif"));
+	public P1(Celda pos) {
+		super(pos);
+		grafico = new Soldado1Grafico(pos.getX(), pos.getY());
 	}
 	
 
 
 }
->>>>>>> 0ab6ef44e0ca13130fa9936892b0179debf8ddfb

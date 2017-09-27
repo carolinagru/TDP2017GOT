@@ -1,3 +1,4 @@
+
 package Personajes;
 
 import java.awt.Image;
@@ -5,21 +6,19 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import Graficos.Soldado1Grafico;
+import Principal.Celda;
 
-public class P2 extends Policia{
+public class P2 extends Policia {
+	
+	protected static int precio = 25;
 
-	protected static int precio = 30;
 	
-	
-	
-	public P2(int x, int y) {
-		fila = x;
-		columna = y;
-		imagen = new ImageIcon(getClass().getResource("/Sprites/Sprite Soldado/GIF's/Soldado Disparando.gif"));
-		
+	public P2(Celda pos) {
+		super(pos);
+		grafico = new Soldado1Grafico(pos.getX(), pos.getY());
 	}
 	
-
 
 
 }

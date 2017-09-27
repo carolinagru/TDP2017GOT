@@ -1,3 +1,4 @@
+package Principal;
 import Objetos.Obstaculo;
 
 public class Celda {
@@ -17,6 +18,14 @@ public class Celda {
 	
 	public void setElemento(Obstaculo elem) {
 		elemento= elem;
+	}
+	
+	public int getX(){
+		return x;
+	}
+	
+	public int getY(){
+		return y;
 	}
 	
 }

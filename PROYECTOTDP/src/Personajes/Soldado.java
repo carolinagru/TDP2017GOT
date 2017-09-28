@@ -2,10 +2,10 @@ package Personajes;
 
 import Principal.Celda;
 
-public abstract class Policia extends Personaje {
+public abstract class Soldado extends Personaje {
 
 	protected int precio;
-	public Policia(Celda pos) {
+	public Soldado(Celda pos) {
  		super(pos);
  		 
 	

@@ -9,12 +9,12 @@ import javax.swing.JLabel;
 import Graficos.Soldado1Grafico;
 import Principal.Celda;
 
-public class P3 extends Policia {
+public class S3 extends Soldado {
 	
 	protected static int precio = 25;
 
 	
-	public P3(Celda pos) {
+	public S3(Celda pos) {
 		super(pos);
 		grafico = new Soldado1Grafico(pos.getX(), pos.getY());
 	}

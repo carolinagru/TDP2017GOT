@@ -25,7 +25,7 @@ import Personajes.S3;
 import Personajes.S4;
 import Personajes.S5;
 import Personajes.Soldado;
-import Personajes.Soldado;
+import Personajes.*;
 
 public class Logica {
 	
@@ -51,8 +51,16 @@ public class Logica {
 		
 	    mapaCombate = new Mapa((panel.getWidth() - 40) / tamanioCelda, (panel.getHeight() - 80 ) / tamanioCelda);
 		
+<<<<<<< HEAD
 	   // Celda c = mapaCombate.getCelda(2, 2);
 	    //Soldado = new Soldado();
+=======
+	    Celda c = mapaCombate.getCelda(1, 1);
+	    
+	    Soldado sol = new S1(c);
+	     
+	    panel.add(sol.getGrafico());
+>>>>>>> 0ce87f47fd2eeb0cb1dadb982cc272fd8a3bc065
 		
 		 
 	}

@@ -35,7 +35,7 @@ public class Logica {
 	protected LinkedList<Objeto> objetosMapa;
 	protected JPanel panelMapa;
 	protected Mapa mapaCombate;
-	private int tamanioCelda = 32;
+	private int tamanioCelda = 40;
 	
 	
 	public Logica(JPanel panel){
@@ -48,7 +48,7 @@ public class Logica {
 	
 	
 		
-	    mapaCombate = new Mapa((panel.getWidth() - 32) / tamanioCelda, (panel.getHeight() - 64 ) / tamanioCelda);
+	    mapaCombate = new Mapa((panel.getWidth() - 40) / tamanioCelda, (panel.getHeight() - 80 ) / tamanioCelda);
 		
 	    Celda c = mapaCombate.getCelda(2, 2);
 	    Soldado = new Soldado();

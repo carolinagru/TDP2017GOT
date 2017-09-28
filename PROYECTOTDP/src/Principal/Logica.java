@@ -2,6 +2,7 @@ package Principal;
 
 
 import java.awt.Point;
+import Personajes.*;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Random;
@@ -45,13 +46,13 @@ public class Logica {
 		soldadosMapa= new LinkedList();
 		objetosMapa= new LinkedList();
 		
-	
+	    panelMapa = panel;
 	
 		
 	    mapaCombate = new Mapa((panel.getWidth() - 40) / tamanioCelda, (panel.getHeight() - 80 ) / tamanioCelda);
 		
-	    Celda c = mapaCombate.getCelda(2, 2);
-	    Soldado = new Soldado();
+	   // Celda c = mapaCombate.getCelda(2, 2);
+	    //Soldado = new Soldado();
 		
 		 
 	}
@@ -71,29 +72,21 @@ public class Logica {
 	
 	public void crearAliens() {
 	//creamos aliens de tipo 1 y 2, dos listas para tipo 1 y 2 (primer orda)
-	/*...
-	  LinkedList listaA1= new LinkedList<Alien>();
-	  LinkedList listaA2= new LinkedList<Alien>();
-	  int fila;
-	  Random num= new Random();
-	  fila=1+num.nextInt(6);
+	
 	  
-	  	for(int i=0; i < 10; i++) {
-	  		listaA1.addLast(new A1());
-	  		listaA2.addLast(new A2());
-	  	}
-	  	  	
+	  Random num= new Random();
+	  Alien alien1;
+	  
+	  int x = num.nextInt(mapaCombate.getWidth());
+	  int y = num.nextInt(mapaCombate.getHeight());
+	  
+	  Celda c= mapaCombate.getCelda(x, y);  	
+	  alien1 = new A1(c);
+	  	if (c.getElemento() != null) {  		
+	  		c.setElemento(alien1);
+	  	}		
 	  	
-	  	if (matrizMapa[fila][9].getElemento() != null) {
-	  		
-	  	
-	  	matrizMapa[fila][9].setElemento(listaA1.getFirst());
-		mapaPanel.add(matrizMapa[fila][9].getElemento().getGrafico());
-		aliensMapa.addLast(listaA1.getFirst());
-		listaA1.removeFirst();
-	  	}
-	  	
-	  	moverAlien(aliensMapa.getFirst());
+	  	panelMapa.add(alien1.getGrafico());
 	  	
 	  	
 		
@@ -103,7 +96,7 @@ public class Logica {
 	  	
 	  
 	  
-		...*/
+		
 		
 	}//--------------------- Ver ----------------------------
 	// Ver como posicionar los Soldados en el Panel mapaPanel. kyfuykvbiunonmmnjhbgv

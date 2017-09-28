@@ -102,7 +102,7 @@ public class Mapa_GUI2 extends JFrame {
 		JButton btnS = new JButton("S1");
 		btnS.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				logica.crearPolicia1(3,3);
+				//logica.crearPolicia1(3,3);
 				
 			}
 		});

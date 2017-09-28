@@ -2,6 +2,7 @@ package Principal;
 
 
 import java.awt.Point;
+import Personajes.*;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Random;
@@ -17,37 +18,49 @@ import Personajes.A4;
 import Personajes.A5;
 import Personajes.A6;
 import Personajes.Alien;
-import Personajes.P1;
-import Personajes.P2;
-import Personajes.P3;
-import Personajes.P4;
-import Personajes.P5;
-import Personajes.Policia;
+
+import Personajes.S1;
+import Personajes.S2;
+import Personajes.S3;
+import Personajes.S4;
+import Personajes.S5;
+import Personajes.Soldado;
+import Personajes.*;
 
 public class Logica {
 	
 	protected int monedas;
 	protected int puntos;
 	protected LinkedList<Alien> aliensMapa;
-	protected LinkedList<Policia> policiasMapa;
+	protected LinkedList<Soldado> soldadosMapa;
 	protected LinkedList<Objeto> objetosMapa;
 	protected JPanel panelMapa;
 	protected Mapa mapaCombate;
-	private int tamanioCelda = 32;
+	private int tamanioCelda = 40;
 	
 	
 	public Logica(JPanel panel){
 		
 		puntos=0;
 		aliensMapa=new LinkedList();
-		policiasMapa= new LinkedList();
+		soldadosMapa= new LinkedList();
 		objetosMapa= new LinkedList();
 		
-	
+	    panelMapa = panel;
 	
 		
-	    mapaCombate = new Mapa((panel.getWidth() - 32) / tamanioCelda, (panel.getHeight() - 64 ) / tamanioCelda);
+	    mapaCombate = new Mapa((panel.getWidth() - 40) / tamanioCelda, (panel.getHeight() - 80 ) / tamanioCelda);
 		
+<<<<<<< HEAD
+	   // Celda c = mapaCombate.getCelda(2, 2);
+	    //Soldado = new Soldado();
+=======
+	    Celda c = mapaCombate.getCelda(1, 1);
+	    
+	    Soldado sol = new S1(c);
+	     
+	    panel.add(sol.getGrafico());
+>>>>>>> 0ce87f47fd2eeb0cb1dadb982cc272fd8a3bc065
 		
 		 
 	}
@@ -60,36 +73,28 @@ public class Logica {
 	}
 	
 	public void activarMenu() {
-		//activamos el menu para comprar policias y objetos
+		//activamos el menu para comprar Soldados y objetos
 		
 		crearAliens();
 	}
 	
 	public void crearAliens() {
 	//creamos aliens de tipo 1 y 2, dos listas para tipo 1 y 2 (primer orda)
-	/*...
-	  LinkedList listaA1= new LinkedList<Alien>();
-	  LinkedList listaA2= new LinkedList<Alien>();
-	  int fila;
-	  Random num= new Random();
-	  fila=1+num.nextInt(6);
+	
 	  
-	  	for(int i=0; i < 10; i++) {
-	  		listaA1.addLast(new A1());
-	  		listaA2.addLast(new A2());
-	  	}
-	  	  	
+	  Random num= new Random();
+	  Alien alien1;
+	  
+	  int x = num.nextInt(mapaCombate.getWidth());
+	  int y = num.nextInt(mapaCombate.getHeight());
+	  
+	  Celda c= mapaCombate.getCelda(x, y);  	
+	  alien1 = new A1(c);
+	  	if (c.getElemento() != null) {  		
+	  		c.setElemento(alien1);
+	  	}		
 	  	
-	  	if (matrizMapa[fila][9].getElemento() != null) {
-	  		
-	  	
-	  	matrizMapa[fila][9].setElemento(listaA1.getFirst());
-		mapaPanel.add(matrizMapa[fila][9].getElemento().getGrafico());
-		aliensMapa.addLast(listaA1.getFirst());
-		listaA1.removeFirst();
-	  	}
-	  	
-	  	moverAlien(aliensMapa.getFirst());
+	  	panelMapa.add(alien1.getGrafico());
 	  	
 	  	
 		
@@ -99,10 +104,10 @@ public class Logica {
 	  	
 	  
 	  
-		...*/
+		
 		
 	}//--------------------- Ver ----------------------------
-	// Ver como posicionar los Policias en el Panel mapaPanel. kyfuykvbiunonmmnjhbgv
+	// Ver como posicionar los Soldados en el Panel mapaPanel. kyfuykvbiunonmmnjhbgv
 	public void moverAlien(Alien a) {
 
 	
@@ -114,39 +119,39 @@ public class Logica {
 
 	
 
-public void crearPolicia1(Celda pos) {
+public void crearSoldado1(Celda pos) {
     	
-    	Policia p1= new P1(pos);
+		Soldado p1= new S1(pos);
     	mapaCombate.agregarObstaculo(pos, p1);
     	panelMapa.add(p1.getGrafico());
     }
     
 	
-public void crearPolicia2(Celda pos) {
+public void crearsoldado2(Celda pos) {
     	
-    	Policia p2= new P2(pos);
+    	Soldado p2= new S2(pos);
     	mapaCombate.agregarObstaculo(pos, p2);
     	panelMapa.add(p2.getGrafico());
     }
     
-public void crearPolicia3(Celda pos) {
+public void crearSoldado3(Celda pos) {
     	
-    	Policia p3= new P3(pos);
+    	Soldado p3= new S3(pos);
     	mapaCombate.agregarObstaculo(pos, p3);
     	panelMapa.add(p3.getGrafico());
     }
     
     
-public void crearPolicia4(Celda pos) {
+public void crearSoldado4(Celda pos) {
     	
-    	Policia p4= new P4(pos);
+    	Soldado p4= new S4(pos);
     	mapaCombate.agregarObstaculo(pos, p4);
     	panelMapa.add(p4.getGrafico());
     }
     
-public void crearPolicia5(Celda pos) {
+public void crearSoldado5(Celda pos) {
 	
-	Policia p5= new P5(pos);
+	Soldado p5= new S5(pos);
 	mapaCombate.agregarObstaculo(pos, p5);
 	panelMapa.add(p5.getGrafico());
 }

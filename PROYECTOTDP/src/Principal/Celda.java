@@ -4,12 +4,12 @@ import Objetos.Obstaculo;
 public class Celda {
 	
 	protected Obstaculo elemento;
-	protected int x;
-	protected int y;
+	protected int fila;
+	protected int columna;
 	
 	public Celda(int x, int y) {
-		this.x=x;
-		this.y=y;
+		fila=x;
+		columna=y;
 		
 	}
 	public Obstaculo getElemento() {
@@ -20,12 +20,12 @@ public class Celda {
 		elemento= elem;
 	}
 	
-	public int getX(){
-		return x;
+	public int getFila(){
+		return fila;
 	}
 	
-	public int getY(){
-		return y;
+	public int getColumna(){
+		return columna;
 	}
 	
 }

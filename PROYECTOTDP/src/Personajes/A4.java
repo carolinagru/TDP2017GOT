@@ -13,7 +13,7 @@ public class A4 extends Alien{
 
 	public A4( Celda pos ) {		
 		super(pos);
-		grafico = new Alien4Grafico(pos.getX(), pos.getY());
+		grafico = new Alien4Grafico(pos.getFila(), pos.getColumna());
 		
 	}
 	

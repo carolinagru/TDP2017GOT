@@ -11,9 +11,9 @@ public class A1 extends Alien{
 	protected static int moneda=25;
 	protected static int punto=15;
 
-	public A1( Celda pos ) {		
+	public A1(Celda pos ) {		
 		super(pos);
-		grafico = new Alien1Grafico(pos.getX(), pos.getY());
+		this.grafico = new Alien1Grafico(pos.getFila(), pos.getColumna());
 		
 	}
 	

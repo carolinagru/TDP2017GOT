@@ -16,7 +16,7 @@ public class S3 extends Soldado {
 	
 	public S3(Celda pos) {
 		super(pos);
-		grafico = new Soldado1Grafico(pos.getX(), pos.getY());
+		grafico = new Soldado1Grafico(pos.getFila(), pos.getColumna());
 	}
 	
 

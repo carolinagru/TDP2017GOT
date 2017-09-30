@@ -16,7 +16,7 @@ public class S4 extends Soldado {
 	
 	public S4(Celda pos) {
 		super(pos);
-		grafico = new Soldado1Grafico(pos.getX(), pos.getY());
+		grafico = new Soldado1Grafico(pos.getFila(), pos.getColumna());
 	}
 	
 

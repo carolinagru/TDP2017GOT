@@ -86,22 +86,27 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.Image;
+
 import javax.swing.JTextField;
 import java.awt.Font;
+import java.awt.Graphics;
+
 import javax.swing.border.TitledBorder;
 
 public class Mapa_GUI2 extends JFrame {
 	
 	private Logica logica;
 	private JPanel contentPane;
-	
-	private Logica j;
+	private Image image;
+	private JPanel panel_3; 
 
 	/**
 	 * Launch the application.
@@ -124,7 +129,7 @@ public class Mapa_GUI2 extends JFrame {
 	 * Create the frame.
 	 */
 	public Mapa_GUI2() {
-		setResizable(false);
+		//setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1350, 700);
 		contentPane = new JPanel();
@@ -165,12 +170,20 @@ public class Mapa_GUI2 extends JFrame {
 		contentPane.add(panel_2);
 		panel_2.setLayout(null);
 		
-		JPanel panel_3 = new JPanel();
+		
+		image = new ImageIcon(getClass().getResource("/Sprites/fondo/cesped.jpg")).getImage();
+
+		panel_3 = new JPanel() {
+			
+		public void paint(Graphics g){
+	        g.drawImage(image, 0, 0, panel_3.getWidth(), panel_3.getHeight(), this);
+	        super.paint(g);
+	    }
+		};
+		panel_3.setOpaque(false);
 		panel_3.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_3.setBounds(334, 85, 1000, 500);
 		contentPane.add(panel_3);
-		
-		logica= new Logica(panel_3);
 		
 		JButton btnS = new JButton("S1");
 		btnS.addActionListener(new ActionListener() {
@@ -200,13 +213,12 @@ public class Mapa_GUI2 extends JFrame {
 		btnS_4.setBounds(1063, 22, 123, 31);
 		panel_2.add(btnS_4);
 
+		
 
-		j = new Logica(panel_3);
+		logica = new Logica(panel_3);
 		 
 		
 		
-		//Interaccion con logica
-		
-		//panel_3.setLayout(new GridLayout(0, 1, 5, 0));
 	}
+	
 }

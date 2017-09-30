@@ -4,23 +4,23 @@ import Objetos.Obstaculo;
 
 public class Mapa {
 	private Celda mapa[][];
-	private int width, height;
+	private int columna, fila;
 
-	public Mapa(int width, int height){
-		this.width = width;
-		this.height = height;
+	public Mapa(int c, int f){
+		this.columna = c;
+		this.fila = f;
 		
-		this.mapa = new Celda[width][height];
+		this.mapa = new Celda[fila][columna];
 		
-		for(int i = 0; i < width; i++){
-			for(int j = 0; j < height; j++){
+		for(int i = 0; i < fila; i++){
+			for(int j = 0; j < columna; j++){
 				this.mapa[i][j] = new Celda( i, j);
 			}
 		}
 	}
 	
 	public Celda getCelda(int x, int y){
-		if((x < this.width) && (x >= 0) && (y < this.height) && (y >= 0))
+		if((x < this.fila) && (x >= 0) && (y < this.columna) && (y >= 0))
 			return this.mapa[x][y];
 		return null;
 	}
@@ -30,14 +30,14 @@ public class Mapa {
 	}
 
 	public int getWidth() {
-		return width;
+		return columna;
 	}
 
 	public int getHeight() {
-		return height;
+		return fila;
 	}
 	
 	public void agregarObstaculo ( Celda pos, Obstaculo o){
-		mapa[pos.getX()][pos.getY()].setElemento(o);
+		mapa[pos.getFila()][pos.getColumna()].setElemento(o);
 	}
 }

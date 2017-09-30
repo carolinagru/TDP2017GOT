@@ -49,19 +49,16 @@ public class Logica {
 	    panelMapa = panel;
 	
 		
-	    mapaCombate = new Mapa((panel.getWidth() - 40) / tamanioCelda, (panel.getHeight() - 80 ) / tamanioCelda);
-		
-<<<<<<< HEAD
-	   // Celda c = mapaCombate.getCelda(2, 2);
-	    //Soldado = new Soldado();
-=======
-	    Celda c = mapaCombate.getCelda(1, 1);
+	    mapaCombate = new Mapa((panelMapa.getWidth() - 40) / tamanioCelda, (panelMapa.getHeight() - 80 ) / tamanioCelda);
+
+	    
+	    Celda c = mapaCombate.getCelda(0,0);
 	    
 	    Soldado sol = new S1(c);
 	     
-	    panel.add(sol.getGrafico());
->>>>>>> 0ce87f47fd2eeb0cb1dadb982cc272fd8a3bc065
+	    panelMapa.add(sol.getGrafico());
 		
+	//    insertarObjetos();
 		 
 	}
 	
@@ -83,13 +80,13 @@ public class Logica {
 	
 	  
 	  Random num= new Random();
-	  Alien alien1;
+	 
 	  
-	  int x = num.nextInt(mapaCombate.getWidth());
-	  int y = num.nextInt(mapaCombate.getHeight());
+	  int fila = num.nextInt(80);
+	  int columna = num.nextInt(80);
 	  
-	  Celda c= mapaCombate.getCelda(x, y);  	
-	  alien1 = new A1(c);
+	     Celda c= mapaCombate.getCelda(fila, columna);  	
+    	 Alien alien1 = new A1(c);
 	  	if (c.getElemento() != null) {  		
 	  		c.setElemento(alien1);
 	  	}		
@@ -111,10 +108,6 @@ public class Logica {
 	public void moverAlien(Alien a) {
 
 	
-		for (int i=10; i > 0; i++ ) {
-			
-		}
-		
 	}
 
 	

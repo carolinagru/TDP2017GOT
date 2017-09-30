@@ -11,12 +11,12 @@ public class PersonajeGrafico {
 
 	protected JLabel label; 
 	protected Icon image;
-	protected int width=30;
-	protected int height=30;
+	protected int width=40;
+	protected int height=40;
 	protected Point pos;
 
-	public PersonajeGrafico( int x, int y ) {
-		pos = new Point(x * this.width, y * this.height);
+	public PersonajeGrafico( int fila, int columna ) {
+		pos = new Point(fila * this.width, columna * this.height);
 	}
 		
 		

@@ -47,12 +47,14 @@ public class Logica {
 		objetosMapa= new LinkedList();
 		
 	    panelMapa = panel;
-	
-		
-	    mapaCombate = new Mapa((panelMapa.getWidth() - 40) / tamanioCelda, (panelMapa.getHeight() - 80 ) / tamanioCelda);
-
 	    
-	    Celda c = mapaCombate.getCelda(0,0);
+	    int filas = (panelMapa.getWidth() - 32) / tamanioCelda;
+	    int columnas = (panelMapa.getHeight() - 64 ) / tamanioCelda;
+	    System.out.println("Cantidad de filas :"+filas+ "Columnas :"+columnas);
+	   
+	     mapaCombate = new Mapa((panelMapa.getHeight() - 64 ) / tamanioCelda,(panelMapa.getWidth() - 32) / tamanioCelda);
+	    
+	    Celda c = mapaCombate.getCelda(23,9);
 	    
 	    Soldado sol = new S1(c);
 	     

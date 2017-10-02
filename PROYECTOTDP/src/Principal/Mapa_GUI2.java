@@ -180,6 +180,7 @@ public class Mapa_GUI2 extends JFrame {
 	        super.paint(g);
 	    }
 		};
+		panel_3.setLayout(null);
 		panel_3.setOpaque(false);
 		panel_3.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_3.setBounds(334, 85, 1000, 500);

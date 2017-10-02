@@ -54,9 +54,9 @@ public class Logica {
 	   
 	     mapaCombate = new Mapa((panelMapa.getHeight() - 64 ) / tamanioCelda,(panelMapa.getWidth() - 32) / tamanioCelda);
 	    
-	    Celda c = mapaCombate.getCelda(23,9);
+	    Celda c = mapaCombate.getCelda(0,0);
 	    
-	    Soldado sol = new S1(c);
+	    Soldado sol = new S3(c);
 	     
 	    panelMapa.add(sol.getGrafico());
 		
@@ -114,42 +114,6 @@ public class Logica {
 
 	
 
-public void crearSoldado1(Celda pos) {
-    	
-		Soldado p1= new S1(pos);
-    	mapaCombate.agregarObstaculo(pos, p1);
-    	panelMapa.add(p1.getGrafico());
-    }
-    
-	
-public void crearsoldado2(Celda pos) {
-    	
-    	Soldado p2= new S2(pos);
-    	mapaCombate.agregarObstaculo(pos, p2);
-    	panelMapa.add(p2.getGrafico());
-    }
-    
-public void crearSoldado3(Celda pos) {
-    	
-    	Soldado p3= new S3(pos);
-    	mapaCombate.agregarObstaculo(pos, p3);
-    	panelMapa.add(p3.getGrafico());
-    }
-    
-    
-public void crearSoldado4(Celda pos) {
-    	
-    	Soldado p4= new S4(pos);
-    	mapaCombate.agregarObstaculo(pos, p4);
-    	panelMapa.add(p4.getGrafico());
-    }
-    
-public void crearSoldado5(Celda pos) {
-	
-	Soldado p5= new S5(pos);
-	mapaCombate.agregarObstaculo(pos, p5);
-	panelMapa.add(p5.getGrafico());
-}
 
 	
 }

@@ -29,11 +29,11 @@ public class Mapa {
 		return mapa;
 	}
 
-	public int getWidth() {
+	public int getColumna() {
 		return columna;
 	}
 
-	public int getHeight() {
+	public int getFila() {
 		return fila;
 	}
 	

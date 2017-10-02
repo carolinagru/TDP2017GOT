@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
@@ -105,17 +106,25 @@ public class Mapa_GUI2 extends JFrame {
 		contentPane.add(panel_3);
 	
 		JButton btnS = new JButton("S1");
-		btnS.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent arg0) {
-				public  void mousePressed (MouseEvent evento){
-					int x=evento.getX();
-					int y=evento.getY();
-				}
-			}
-		});
-
 		btnS.setBounds(118, 22, 123, 31);
 		panel_2.add(btnS);
+		
+		
+		
+		btnS.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+				addMouseListener(new java.awt.event.MouseAdapter() {
+						public void mousePressed(MouseEvent e) {
+		            	int x=e.getX() - 334;
+						int y=e.getY() - 85;
+						System.out.println("Las coordenadas son -> X: "+x+" Y : "+y);
+		            }
+		        }); 
+		}
+		});
+	
+
+	
 		
 		JButton btnS_1 = new JButton("S2");
 		btnS_1.setBounds(351, 22, 123, 31);

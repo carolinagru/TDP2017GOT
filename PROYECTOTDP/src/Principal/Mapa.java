@@ -6,7 +6,7 @@ public class Mapa {
 	private Celda mapa[][];
 	private int columna, fila;
 
-	public Mapa(int c, int f){
+	public Mapa(int f, int c){
 		this.columna = c;
 		this.fila = f;
 		

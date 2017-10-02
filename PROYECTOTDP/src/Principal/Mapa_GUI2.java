@@ -110,7 +110,14 @@ public class Mapa_GUI2 extends JFrame {
 		contentPane.add(panel_3);
 	
 		JButton btnS = new JButton("S1");
+<<<<<<< HEAD
 
+=======
+		btnS.setBounds(118, 22, 123, 31);
+		panel_2.add(btnS);
+		
+		
+>>>>>>> 051d6440908c1ebe287a8f2c893e4ac62e6a98c2
 		
 		btnS.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
@@ -118,6 +125,7 @@ public class Mapa_GUI2 extends JFrame {
 						public void mousePressed(MouseEvent e) {
 		            	int x=e.getX() - 334;
 						int y=e.getY() - 85;
+<<<<<<< HEAD
 						//System.out.println("Las coordenadas son -> X: "+x+" Y : "+y);
 
 						 int filas = (y - 40) / 40;
@@ -132,6 +140,16 @@ public class Mapa_GUI2 extends JFrame {
 	
 		btnS.setBounds(118, 22, 123, 31);
 		panel_2.add(btnS);
+=======
+						System.out.println("Las coordenadas son -> X: "+x+" Y : "+y);
+		            }
+		        }); 
+		}
+		});
+	
+
+	
+>>>>>>> 051d6440908c1ebe287a8f2c893e4ac62e6a98c2
 		
 		JButton btnS_1 = new JButton("S2");
 		btnS_1.setBounds(351, 22, 123, 31);

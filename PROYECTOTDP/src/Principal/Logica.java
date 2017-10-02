@@ -48,18 +48,15 @@ public class Logica {
 		
 	    panelMapa = panel;
 	    
-<<<<<<< HEAD
-	    int filas = (panelMapa.getWidth() - 40) / tamanioCelda;
-	    int columnas = (panelMapa.getHeight() - 80 ) / tamanioCelda;
-=======
+
 	    int filas = (panelMapa.getHeight() - 40) / tamanioCelda;
 	    int columnas = (panelMapa.getWidth() - 80 ) / tamanioCelda;
->>>>>>> 051d6440908c1ebe287a8f2c893e4ac62e6a98c2
+
 	    System.out.println("Cantidad de filas :"+filas+ "Columnas :"+columnas);
 	   
-	     mapaCombate = new Mapa((panelMapa.getHeight() - 40 ) / tamanioCelda,(panelMapa.getWidth() - 80) / tamanioCelda);
+	     mapaCombate = new Mapa(filas,columnas);
 	    
-	    Celda c = mapaCombate.getCelda(10,22);
+	    Celda c = mapaCombate.getCelda(9,22);
 	    
 	    Soldado sol = new S3(c);
 	     

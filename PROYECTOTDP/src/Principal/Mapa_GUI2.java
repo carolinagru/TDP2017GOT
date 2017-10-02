@@ -80,6 +80,10 @@ public class Mapa_GUI extends JFrame {
 }
 **/
 package Principal;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -89,6 +93,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
@@ -187,12 +192,25 @@ public class Mapa_GUI2 extends JFrame {
 		contentPane.add(panel_3);
 		
 		JButton btnS = new JButton("S1");
-		btnS.addActionListener(new ActionListener() {
+		
+		btnS.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-				//logica.crearPolicia1(3,3);
-				
-			}
+				addMouseListener(new java.awt.event.MouseAdapter() {
+						public void mousePressed(MouseEvent e) {
+		            	int x=e.getX() - 334;
+						int y=e.getY() - 85;
+						//System.out.println("Las coordenadas son -> X: "+x+" Y : "+y);
+
+						 int filas = (y - 40) / 40;
+						 int columnas = (x - 80 ) / 40;
+						 
+						System.out.println("Las coordenadas son -> X: "+columnas+" Y : "+filas);
+		            }
+		        }); 
+		}
 		});
+		
+		 
 		
 
 		btnS.setBounds(118, 22, 123, 31);

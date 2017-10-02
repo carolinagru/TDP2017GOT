@@ -2,6 +2,7 @@ package Factory;
 
 import Personajes.Personaje;
 
+/**
 public class PersonajeFactory implements PersonajeFactoryMethod{
 	public Personaje createPersonaje (String s){
 		if ( s.equals("Soldado1"))
@@ -58,3 +59,4 @@ public class PersonajeFactory implements PersonajeFactoryMethod{
 			return new A1;
 	}
 }
+**/

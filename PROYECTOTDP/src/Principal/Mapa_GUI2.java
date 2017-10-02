@@ -1,84 +1,3 @@
-/** import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
-import java.awt.Color;
-import java.awt.GridLayout;
-
-public class Mapa_GUI extends JFrame {
-
-	private JPanel contentPane;
-	private int anchoPantalla;
-	private int altoPantalla; 
-	private Logica logica;
-	
-	 * Launch the application.
-	 
-	public static void main(String[] args) {
-		
-		
-		
-		
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					
-					Mapa_GUI frame = new Mapa_GUI();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-
-	 * Create the frame.
-	 
-	public Mapa_GUI() {
-		
-		
-		anchoPantalla = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
-		altoPantalla = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
-
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		this.setBounds((anchoPantalla / 3) - (getWidth() / 2), (altoPantalla / 6) - (getHeight() / 2), 1000, 800);
-		
-	//	setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JPanel panel = new JPanel();
-		panel.setBorder(new LineBorder(new Color(0, 0, 0), 3));
-		panel.setBounds(0, 0, 984, 100);
-		contentPane.add(panel);
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 3));
-		panel_1.setBounds(0, 692, 984, 200);
-		contentPane.add(panel_1);
-		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBorder(new LineBorder(new Color(0, 0, 0)));
-		panel_2.setBounds(0, 48, 100, 646);
-		contentPane.add(panel_2);
-		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(65, 48,200, 300);
-		contentPane.add(panel_3);
-		 
-		logica= new Logica(panel_3);
-		//panel_3.setLayout(new GridLayout(5, 5, 10, 10));
-		
-	}
-}
-**/
 package Principal;
 
 import java.awt.*;
@@ -179,19 +98,19 @@ public class Mapa_GUI2 extends JFrame {
 		image = new ImageIcon(getClass().getResource("/Sprites/fondo/cesped.jpg")).getImage();
 
 		panel_3 = new JPanel() {
-			
 		public void paint(Graphics g){
 	        g.drawImage(image, 0, 0, panel_3.getWidth(), panel_3.getHeight(), this);
+	        setOpaque(false);
 	        super.paint(g);
 	    }
 		};
 		panel_3.setLayout(null);
-		panel_3.setOpaque(false);
 		panel_3.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_3.setBounds(334, 85, 1000, 500);
 		contentPane.add(panel_3);
-		
+	
 		JButton btnS = new JButton("S1");
+
 		
 		btnS.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
@@ -210,9 +129,7 @@ public class Mapa_GUI2 extends JFrame {
 		}
 		});
 		
-		 
-		
-
+	
 		btnS.setBounds(118, 22, 123, 31);
 		panel_2.add(btnS);
 		

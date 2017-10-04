@@ -14,9 +14,7 @@ import javax.swing.JPanel;
 import Objetos.Objeto;
 import Objetos.Obstaculo;
 import Observer.ObservableCrear;
-import Observer.ObservableVerificar;
-import Observer.ObserverCreo;
-import Observer.ObserverVerifico;
+
 import Personajes.A1;
 import Personajes.A2;
 import Personajes.A3;
@@ -44,11 +42,8 @@ public class Logica {
 	protected Mapa mapaCombate;
 	private int tamanioCelda = 40;
 	private ObservableCrear sol;
-	private ObservableVerificar ver;
-<<<<<<< HEAD
 	private PriorityQueue<Integer> objetosInstanciados;
-=======
->>>>>>> c29e7443aeeabb5b2c4a0f623f5035f0802a84ea
+	private ObservableCrear ob;
 	
 	
 	public Logica(JPanel panel){
@@ -57,23 +52,17 @@ public class Logica {
 		aliensMapa=new LinkedList();
 		soldadosMapa= new LinkedList();
 		objetosMapa= new LinkedList();
-		obs  = new ObservableCrear();
-		ver = new ObservableVerificar();
 	    panelMapa = panel;
 	    objetosInstanciados = new PriorityQueue<Integer>();	    
-
+	    ob = new ObservableCrear();
+	    
 	    int filas = (panelMapa.getHeight() - 40) / tamanioCelda;
 	    int columnas = (panelMapa.getWidth() - 80 ) / tamanioCelda;
 
 	    System.out.println("Cantidad de filas :"+filas+ "Columnas :"+columnas);
 	   
 	     mapaCombate = new Mapa(filas,columnas);
-<<<<<<< HEAD
 
-=======
-	    
->>>>>>> c29e7443aeeabb5b2c4a0f623f5035f0802a84ea
-		
 	//  insertarObjetos();
 		 
 	}
@@ -125,9 +114,13 @@ public class Logica {
 	
 	public void presionoBoton(String g) {
 		
-		if (g.equals("Soldado1")) {
-			objetosInstanciados.add(1);
-		}	
+		switch (g){
+		case "Soldado1":  objetosInstanciados.add(1); break;
+		case "Soldado2":  objetosInstanciados.add(2); break;
+		case "Soldado3":  objetosInstanciados.add(3); break;
+		case "Soldado4":  objetosInstanciados.add(4); break;
+		case "Soldado5":  objetosInstanciados.add(5); break;	
+	}	
 	}
 			
 		
@@ -136,10 +129,10 @@ public class Logica {
 		Celda pos = mapaCombate.getCelda(x, y);
 		
 		if (objetosInstanciados.poll() == 1) { 
-			ObserverCrear observer = new ObserverCrear();
-			ver.attach(observer);	
-			ver.notifyObservers(pos, "Soldado1");
-			ver.dettach(observer);
+			ObserverCrear observer = new ObserverCrear(panelMapa);
+			ob.attach(observer);	
+			ob.notifyObservers(pos, "Soldado1");
+			ob.dettach(observer);
 		}
 		
 	}

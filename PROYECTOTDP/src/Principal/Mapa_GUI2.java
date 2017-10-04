@@ -95,10 +95,6 @@ public class Mapa_GUI2 extends JFrame {
 		
 		logica = new Logica(panel_3);
 		
-<<<<<<< HEAD
-=======
-
->>>>>>> c29e7443aeeabb5b2c4a0f623f5035f0802a84ea
 		panel_3.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mousePressed(MouseEvent e) {
 				int x=e.getX() ;
@@ -118,11 +114,8 @@ public class Mapa_GUI2 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				logica.presionoBoton("o1");
 			}
-<<<<<<< HEAD
-=======
-
->>>>>>> c29e7443aeeabb5b2c4a0f623f5035f0802a84ea
 		});
+
 		
 		
 		JButton botonObjeto2 = new JButton("Ametralladora");
@@ -150,7 +143,7 @@ public class Mapa_GUI2 extends JFrame {
 		panel_2.add(botonSoldado1);
 		botonSoldado1.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-				logica.presionoBoton("S1");					
+				logica.presionoBoton("Soldado1");					
 			}
 		
 		});
@@ -160,7 +153,7 @@ public class Mapa_GUI2 extends JFrame {
 		panel_2.add(botonSoldado2);
 		botonSoldado2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				logica.presionoBoton("S2");		
+				logica.presionoBoton("Soldado2");		
 			}
 		});
 		
@@ -169,25 +162,25 @@ public class Mapa_GUI2 extends JFrame {
 		panel_2.add(botonSoldado3);
 		botonSoldado3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				logica.presionoBoton("S3");
+				logica.presionoBoton("Soldado3");
 			}
 		});
 		
 		JButton botonSoldado4 = new JButton("S4");
-		botonSoldado3.setBounds(834, 22, 123, 31);
-		panel_2.add(botonSoldado3);
-		botonSoldado3.addActionListener(new ActionListener() {
+		botonSoldado4.setBounds(834, 22, 123, 31);
+		panel_2.add(botonSoldado4);
+		botonSoldado4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				logica.presionoBoton("S4");
+				logica.presionoBoton("Soldado4");
 			}
 		});
 		
 		JButton botonSoldado5 = new JButton("S5");
-		botonSoldado3.setBounds(1063, 22, 123, 31);
-		panel_2.add(botonSoldado3);
-		botonSoldado3.addActionListener(new ActionListener() {
+		botonSoldado5.setBounds(1063, 22, 123, 31);
+		panel_2.add(botonSoldado5);
+		botonSoldado5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				logica.presionoBoton("S5");
+				logica.presionoBoton("Soldado5");
 			}
 		});
 		

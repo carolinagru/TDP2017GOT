@@ -94,11 +94,7 @@ public class Mapa_GUI2 extends JFrame {
 		contentPane.add(panel_3);
 		
 		logica = new Logica(panel_3);
-<<<<<<< HEAD
-		
-=======
 
->>>>>>> 3ff2d6a21a4ad9b2f09b2074b91828b64fd570f6
 		panel_3.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mousePressed(MouseEvent e) {
 				int x=e.getX() ;

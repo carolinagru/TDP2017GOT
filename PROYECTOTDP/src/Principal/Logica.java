@@ -32,7 +32,7 @@ import Personajes.S4;
 import Personajes.S5;
 import Personajes.Soldado;
 import Personajes.*;
-
+import Observer.*;
 public class Logica {
 	
 	protected int monedas;
@@ -45,7 +45,10 @@ public class Logica {
 	private int tamanioCelda = 40;
 	private ObservableCrear sol;
 	private ObservableVerificar ver;
+<<<<<<< HEAD
 	private PriorityQueue<Integer> objetosInstanciados;
+=======
+>>>>>>> c29e7443aeeabb5b2c4a0f623f5035f0802a84ea
 	
 	
 	public Logica(JPanel panel){
@@ -65,7 +68,11 @@ public class Logica {
 	    System.out.println("Cantidad de filas :"+filas+ "Columnas :"+columnas);
 	   
 	     mapaCombate = new Mapa(filas,columnas);
+<<<<<<< HEAD
 
+=======
+	    
+>>>>>>> c29e7443aeeabb5b2c4a0f623f5035f0802a84ea
 		
 	//  insertarObjetos();
 		 

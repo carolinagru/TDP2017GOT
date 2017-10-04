@@ -95,6 +95,10 @@ public class Mapa_GUI2 extends JFrame {
 		
 		logica = new Logica(panel_3);
 		
+<<<<<<< HEAD
+=======
+
+>>>>>>> c29e7443aeeabb5b2c4a0f623f5035f0802a84ea
 		panel_3.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mousePressed(MouseEvent e) {
 				int x=e.getX() ;
@@ -114,6 +118,10 @@ public class Mapa_GUI2 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				logica.presionoBoton("o1");
 			}
+<<<<<<< HEAD
+=======
+
+>>>>>>> c29e7443aeeabb5b2c4a0f623f5035f0802a84ea
 		});
 		
 		

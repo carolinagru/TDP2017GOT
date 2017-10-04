@@ -95,25 +95,7 @@ public class Mapa_GUI2 extends JFrame {
 		
 		logica = new Logica(panel_3);
 		
-<<<<<<< HEAD
-		//BOTON CREAR SOLDADO 
-		btnS.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent arg0) {
-				addMouseListener(new java.awt.event.MouseAdapter() {
-						public void mousePressed(MouseEvent e) {
-		            	int x=e.getX() - 334;
-						int y=e.getY() - 85;
 
-						//System.out.println("Las coordenadas son -> X: "+x+" Y : "+y);
-
-						 int filas = (y - 40) / 40;
-						 int columnas = (x - 80 ) / 40;
-						 
-						System.out.println("Las coordenadas son -> X: "+columnas+" Y : "+filas);
-		            }
-		        }); 
-		}
-=======
 		panel_3.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mousePressed(MouseEvent e) {
 				int x=e.getX() ;
@@ -133,7 +115,7 @@ public class Mapa_GUI2 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				logica.presionoBoton("o1");
 			}
->>>>>>> ba9c7c326c85d6f0f80905de6867814b183b9d0d
+
 		});
 		
 		

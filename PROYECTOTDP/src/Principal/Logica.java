@@ -26,7 +26,7 @@ import Personajes.S4;
 import Personajes.S5;
 import Personajes.Soldado;
 import Personajes.*;
-
+import Observer.*;
 public class Logica {
 	
 	protected int monedas;
@@ -38,7 +38,7 @@ public class Logica {
 	protected Mapa mapaCombate;
 	private int tamanioCelda = 40;
 	private ObservableCrear sol;
-	private AlarmaVerificar ver;
+	private ObservableVerificar ver;
 	
 	
 	public Logica(JPanel panel){
@@ -59,15 +59,6 @@ public class Logica {
 	   
 	     mapaCombate = new Mapa(filas,columnas);
 	    
-<<<<<<< HEAD
-	    Celda c = mapaCombate.getCelda(9,9);
-	    
-	    Soldado sol = new S3(c);
-	     
-	    panelMapa.add(sol.getGrafico());
-=======
-	   
->>>>>>> ba9c7c326c85d6f0f80905de6867814b183b9d0d
 		
 	//  insertarObjetos();
 		 

@@ -3,7 +3,9 @@ package Observer;
 import java.awt.List;
 import java.util.LinkedList;
 
-public class Observable implements Subject{
+import Principal.Celda;
+
+public class ObservableCrear implements Subject{
 	private static LinkedList<Observer> observados = new LinkedList<Observer>();   
 
 	 
@@ -19,12 +21,8 @@ public class Observable implements Subject{
 	}
 
 
-	public void notifyObservers() {
-		for (Observer o : observados){
-			o.update();
-		}
-		 
-		
-	} 
-
+	public void notifyObservers(Celda c,String s) {
+		for (Observer o : observados)
+			o.update(c,s);
+	}
 }

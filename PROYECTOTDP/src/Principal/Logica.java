@@ -11,12 +11,14 @@ import java.util.Random;
 
 import javax.swing.JPanel;
 
+import Factory.PersonajeFactory;
+import Factory.PersonajesFactoryMethod;
 import Objetos.Objeto;
 import Objetos.Obstaculo;
 import Observer.ObservableCrear;
-import Observer.ObservableVerificar;
-import Observer.ObserverCreo;
-import Observer.ObserverVerifico;
+ 
+ 
+ 
 import Personajes.A1;
 import Personajes.A2;
 import Personajes.A3;
@@ -43,13 +45,10 @@ public class Logica {
 	protected JPanel panelMapa;
 	protected Mapa mapaCombate;
 	private int tamanioCelda = 40;
-	private ObservableCrear sol;
-	private ObservableVerificar ver;
-<<<<<<< HEAD
+	private ObservableCrear ob;
 	private PriorityQueue<Integer> objetosInstanciados;
-=======
->>>>>>> c29e7443aeeabb5b2c4a0f623f5035f0802a84ea
-	
+
+ 
 	
 	public Logica(JPanel panel){
 		
@@ -57,8 +56,8 @@ public class Logica {
 		aliensMapa=new LinkedList();
 		soldadosMapa= new LinkedList();
 		objetosMapa= new LinkedList();
-		obs  = new ObservableCrear();
-		ver = new ObservableVerificar();
+		ob  = new ObservableCrear();
+		 
 	    panelMapa = panel;
 	    objetosInstanciados = new PriorityQueue<Integer>();	    
 
@@ -68,12 +67,11 @@ public class Logica {
 	    System.out.println("Cantidad de filas :"+filas+ "Columnas :"+columnas);
 	   
 	     mapaCombate = new Mapa(filas,columnas);
-<<<<<<< HEAD
-
-=======
-	    
->>>>>>> c29e7443aeeabb5b2c4a0f623f5035f0802a84ea
-		
+	     
+	     
+	     Celda c = mapaCombate.getCelda(2, 2);
+	     Personaje S1 = new S1(c);
+			panelMapa.add(S1.getGrafico());
 	//  insertarObjetos();
 		 
 	}
@@ -125,9 +123,15 @@ public class Logica {
 	
 	public void presionoBoton(String g) {
 		
-		if (g.equals("Soldado1")) {
-			objetosInstanciados.add(1);
-		}	
+		switch (g){
+			case "Soldado1":  objetosInstanciados.add(1); break;
+			case "Soldado2":  objetosInstanciados.add(2); break;
+			case "Soldado3":  objetosInstanciados.add(3); break;
+			case "Soldado4":  objetosInstanciados.add(4); break;
+			case "Soldado5":  objetosInstanciados.add(5); break;
+		}
+			 
+	 
 	}
 			
 		
@@ -136,14 +140,18 @@ public class Logica {
 		Celda pos = mapaCombate.getCelda(x, y);
 		
 		if (objetosInstanciados.poll() == 1) { 
-			ObserverCrear observer = new ObserverCrear();
-			ver.attach(observer);	
-			ver.notifyObservers(pos, "Soldado1");
-			ver.dettach(observer);
+			ObserverCrear observer = new ObserverCrear(panelMapa);
+			ob.attach(observer);	
+			ob.notifyObservers(pos, "Soldado1");
+			 
+			
+			 
+			ob.dettach(observer);
 		}
 		
 	}
-	
+ 
+	 
 
 
 	

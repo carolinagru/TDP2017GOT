@@ -94,11 +94,7 @@ public class Mapa_GUI2 extends JFrame {
 		contentPane.add(panel_3);
 		
 		logica = new Logica(panel_3);
-		
-<<<<<<< HEAD
-=======
 
->>>>>>> c29e7443aeeabb5b2c4a0f623f5035f0802a84ea
 		panel_3.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mousePressed(MouseEvent e) {
 				int x=e.getX() ;
@@ -106,7 +102,7 @@ public class Mapa_GUI2 extends JFrame {
 				int filas = (y - 40) / 40;
 				int columnas = (x - 80 ) / 40;
 				
-					logica.presionoPanel(x,y);
+					logica.presionoPanel(filas,columnas);
 			}
 		}); 
 		
@@ -118,12 +114,7 @@ public class Mapa_GUI2 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				logica.presionoBoton("o1");
 			}
-<<<<<<< HEAD
-=======
-
->>>>>>> c29e7443aeeabb5b2c4a0f623f5035f0802a84ea
 		});
-		
 		
 		JButton botonObjeto2 = new JButton("Ametralladora");
 		botonObjeto2.setBounds(507, 20, 292, 42);
@@ -150,7 +141,7 @@ public class Mapa_GUI2 extends JFrame {
 		panel_2.add(botonSoldado1);
 		botonSoldado1.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-				logica.presionoBoton("S1");					
+				logica.presionoBoton("Soldado1");					
 			}
 		
 		});
@@ -160,7 +151,7 @@ public class Mapa_GUI2 extends JFrame {
 		panel_2.add(botonSoldado2);
 		botonSoldado2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				logica.presionoBoton("S2");		
+				logica.presionoBoton("Soldado2");		
 			}
 		});
 		
@@ -169,7 +160,7 @@ public class Mapa_GUI2 extends JFrame {
 		panel_2.add(botonSoldado3);
 		botonSoldado3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				logica.presionoBoton("S3");
+				logica.presionoBoton("Soldado3");
 			}
 		});
 		

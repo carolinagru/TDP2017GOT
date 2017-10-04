@@ -122,6 +122,13 @@ public class Logica {
 		}
 	}	
 	
+	public void presionoBotonBorrar() {
+		if(objetosInstanciados.size() != 0) {
+			objetosInstanciados.remove();
+		}
+		//panelMapa.remove(soldadosMapa.remove());
+	}
+	
 	public void presionoPanel(int x, int y) {
 		Celda pos = mapaCombate.getCelda(x, y);
 		

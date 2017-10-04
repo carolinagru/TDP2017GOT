@@ -25,13 +25,13 @@ import java.awt.Graphics;
 
 import javax.swing.border.TitledBorder;
 
+
 public class Mapa_GUI2 extends JFrame {
 	
 	private Logica logica;
 	private JPanel contentPane;
 	private Image image;
 	private JPanel panel_3; 
-
 	/**
 	 * Launch the application.
 	 */
@@ -61,27 +61,12 @@ public class Mapa_GUI2 extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		// P A N E L E S --------------------------------------------------------------------------------------------------------------------------------------------------------------
 		JPanel panel = new JPanel();
 		panel.setBorder(new TitledBorder(null, "Compras", TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLUE));
 		panel.setBounds(10, 11, 1324, 72);
 		contentPane.add(panel);
 		panel.setLayout(null);
-		
-		JButton btnNewButton = new JButton("Ametralladora");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton.setBounds(67, 20, 292, 42);
-		panel.add(btnNewButton);
-		
-		JButton button = new JButton("Ametralladora");
-		button.setBounds(507, 20, 292, 42);
-		panel.add(button);
-		
-		JButton button_1 = new JButton("Ametralladora");
-		button_1.setBounds(950, 20, 292, 42);
-		panel.add(button_1);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -93,7 +78,6 @@ public class Mapa_GUI2 extends JFrame {
 		panel_2.setBounds(10, 584, 1324, 76);
 		contentPane.add(panel_2);
 		panel_2.setLayout(null);
-		
 		
 		image = new ImageIcon(getClass().getResource("/Sprites/fondo/cesped.jpg")).getImage();
 
@@ -108,13 +92,10 @@ public class Mapa_GUI2 extends JFrame {
 		panel_3.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_3.setBounds(334, 85, 1000, 500);
 		contentPane.add(panel_3);
-	
-		JButton btnS = new JButton("S1");
-
-		btnS.setBounds(118, 22, 123, 31);
-		panel_2.add(btnS);
 		
+		logica = new Logica(panel_3);
 		
+<<<<<<< HEAD
 		//BOTON CREAR SOLDADO 
 		btnS.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
@@ -132,34 +113,97 @@ public class Mapa_GUI2 extends JFrame {
 		            }
 		        }); 
 		}
+=======
+		panel_3.addMouseListener(new java.awt.event.MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				int x=e.getX() ;
+				int y=e.getY() ;
+				int filas = (y - 40) / 40;
+				int columnas = (x - 80 ) / 40;
+				
+					logica.presionoPanel(x,y);
+			}
+		}); 
+		
+		// B O T O N E S     O B J E T O S--------------------------------------------------------------------------------------------------------------------------------------------------------------
+		JButton botonObjeto1 = new JButton("Ametralladora");
+		botonObjeto1.setBounds(67, 20, 292, 42);
+		panel.add(botonObjeto1);
+		botonObjeto1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				logica.presionoBoton("o1");
+			}
+>>>>>>> ba9c7c326c85d6f0f80905de6867814b183b9d0d
 		});
 		
-	
-		btnS.setBounds(118, 22, 123, 31);
-		panel_2.add(btnS);
-					
-	
+		
+		JButton botonObjeto2 = new JButton("Ametralladora");
+		botonObjeto2.setBounds(507, 20, 292, 42);
+		panel.add(botonObjeto2);
+		botonObjeto2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				logica.presionoBoton("o2");
+			}
+		});
+		
+		JButton botonObjeto3 = new JButton("Ametralladora");
+		botonObjeto3.setBounds(950, 20, 292, 42);
+		panel.add(botonObjeto3);
+		botonObjeto3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				logica.presionoBoton("o3");				
+			}
+		});
+		
+		// B O T O N E S    S O L D A D O S--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+		JButton botonSoldado1 = new JButton("S1");
+		botonSoldado1.setBounds(118, 22, 123, 31);
+		panel_2.add(botonSoldado1);
+		botonSoldado1.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+				logica.presionoBoton("S1");					
+			}
 		
-		JButton btnS_1 = new JButton("S2");
-		btnS_1.setBounds(351, 22, 123, 31);
-		panel_2.add(btnS_1);
+		});
 		
-		JButton btnS_2 = new JButton("S3");
-		btnS_2.setBounds(598, 22, 123, 31);
-		panel_2.add(btnS_2);
+		JButton botonSoldado2 = new JButton("S2");
+		botonSoldado2.setBounds(351, 22, 123, 31);
+		panel_2.add(botonSoldado2);
+		botonSoldado2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				logica.presionoBoton("S2");		
+			}
+		});
 		
-		JButton btnS_3 = new JButton("S4");
-		btnS_3.setBounds(834, 22, 123, 31);
-		panel_2.add(btnS_3);
+		JButton botonSoldado3 = new JButton("S3");
+		botonSoldado3.setBounds(598, 22, 123, 31);
+		panel_2.add(botonSoldado3);
+		botonSoldado3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				logica.presionoBoton("S3");
+			}
+		});
 		
-		JButton btnS_4 = new JButton("S5");
-		btnS_4.setBounds(1063, 22, 123, 31);
-		panel_2.add(btnS_4);
+		JButton botonSoldado4 = new JButton("S4");
+		botonSoldado3.setBounds(834, 22, 123, 31);
+		panel_2.add(botonSoldado3);
+		botonSoldado3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				logica.presionoBoton("S4");
+			}
+		});
+		
+		JButton botonSoldado5 = new JButton("S5");
+		botonSoldado3.setBounds(1063, 22, 123, 31);
+		panel_2.add(botonSoldado3);
+		botonSoldado3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				logica.presionoBoton("S5");
+			}
+		});
+		
 
-		
-
-		logica = new Logica(panel_3);
 		 
 		
 		

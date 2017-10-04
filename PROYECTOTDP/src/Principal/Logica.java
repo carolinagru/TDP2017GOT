@@ -37,6 +37,8 @@ public class Logica {
 	protected JPanel panelMapa;
 	protected Mapa mapaCombate;
 	private int tamanioCelda = 40;
+	private ObservableCrear sol;
+	private AlarmaVerificar ver;
 	
 	
 	public Logica(JPanel panel){
@@ -45,7 +47,8 @@ public class Logica {
 		aliensMapa=new LinkedList();
 		soldadosMapa= new LinkedList();
 		objetosMapa= new LinkedList();
-		
+		obs  = new ObservableCrear();
+		ver = new ObservableVerificar();
 	    panelMapa = panel;
 	    
 
@@ -56,13 +59,17 @@ public class Logica {
 	   
 	     mapaCombate = new Mapa(filas,columnas);
 	    
+<<<<<<< HEAD
 	    Celda c = mapaCombate.getCelda(9,9);
 	    
 	    Soldado sol = new S3(c);
 	     
 	    panelMapa.add(sol.getGrafico());
+=======
+	   
+>>>>>>> ba9c7c326c85d6f0f80905de6867814b183b9d0d
 		
-	//    insertarObjetos();
+	//  insertarObjetos();
 		 
 	}
 	
@@ -76,14 +83,19 @@ public class Logica {
 	public void activarMenu() {
 		//activamos el menu para comprar Soldados y objetos
 		
-		crearAliens();
+	//	crearAliens();
 	}
 	
-	public void crearAliens() {
+	public void crearAliens(int x, int y) {
 	//creamos aliens de tipo 1 y 2, dos listas para tipo 1 y 2 (primer orda)
 	
+		 Celda c = mapaCombate.getCelda(x,y);
+		    
+		    Soldado sol = new S3(c);
+		     
+		    panelMapa.add(sol.getGrafico());
 	  
-	  Random num= new Random();
+	/**  Random num= new Random();
 	 
 	  
 	  int fila = num.nextInt(80);
@@ -97,23 +109,31 @@ public class Logica {
 	  	
 	  	panelMapa.add(alien1.getGrafico());
 	  	
-	  	
-		
-	  
-	  	
-	  	
-	  	
-	  
-	  
-		
-		
+	  	**/
+			
 	}//--------------------- Ver ----------------------------
 	// Ver como posicionar los Soldados en el Panel mapaPanel. kyfuykvbiunonmmnjhbgv
 	public void moverAlien(Alien a) {
 
 	
 	}
-
+	
+	public void presionoBoton(String g) {
+		
+		if (g.equals("Soldado1")) {
+		   obs.attach(new ObserverCreo());
+		   obs.notifyObservers(g);
+		}	
+	}
+			
+		
+	
+	public void presionoPanel(int x, int y) {
+		Celda pos = mapaCombate.getCelda(x, y);
+		ver.attach(new ObserverVerifico);	
+		ver.notifyObservers(pos);
+		
+	}
 	
 
 

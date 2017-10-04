@@ -1,8 +1,12 @@
 package Observer;
 
 import java.util.LinkedList;
+import java.util.Observable;
+import java.util.Observer;
 
-public class ObservableVerificar implements Subject{
+import Principal.Celda;
+
+public class ObservableVerificar extends Observable{
 	private static LinkedList<Observer> observados = new LinkedList<Observer>();
 		public void attach(Observer observador) {
 			observados.add(observador);
@@ -14,9 +18,9 @@ public class ObservableVerificar implements Subject{
 		}
 
 
-		public void notifyObservers() {
+		public void notifyObservers(Celda c) {
 			for (Observer o : observados)
-				o.update();
+				o.update(this, c);
 		}
 		
 }

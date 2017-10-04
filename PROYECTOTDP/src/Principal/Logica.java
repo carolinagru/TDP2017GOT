@@ -5,12 +5,18 @@ import java.awt.Point;
 import Personajes.*;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Random;
 
 import javax.swing.JPanel;
 
 import Objetos.Objeto;
 import Objetos.Obstaculo;
+import Observer.ObservableCrear;
+import Observer.ObservableVerificar;
+import Observer.ObserverCreo;
+import Observer.ObserverVerifico;
 import Personajes.A1;
 import Personajes.A2;
 import Personajes.A3;
@@ -38,7 +44,8 @@ public class Logica {
 	protected Mapa mapaCombate;
 	private int tamanioCelda = 40;
 	private ObservableCrear sol;
-	private AlarmaVerificar ver;
+	private ObservableVerificar ver;
+	private PriorityQueue<Integer> objetosInstanciados;
 	
 	
 	public Logica(JPanel panel){
@@ -50,7 +57,7 @@ public class Logica {
 		obs  = new ObservableCrear();
 		ver = new ObservableVerificar();
 	    panelMapa = panel;
-	    
+	    objetosInstanciados = new PriorityQueue<Integer>();	    
 
 	    int filas = (panelMapa.getHeight() - 40) / tamanioCelda;
 	    int columnas = (panelMapa.getWidth() - 80 ) / tamanioCelda;
@@ -58,16 +65,7 @@ public class Logica {
 	    System.out.println("Cantidad de filas :"+filas+ "Columnas :"+columnas);
 	   
 	     mapaCombate = new Mapa(filas,columnas);
-	    
-<<<<<<< HEAD
-	    Celda c = mapaCombate.getCelda(9,9);
-	    
-	    Soldado sol = new S3(c);
-	     
-	    panelMapa.add(sol.getGrafico());
-=======
-	   
->>>>>>> ba9c7c326c85d6f0f80905de6867814b183b9d0d
+
 		
 	//  insertarObjetos();
 		 
@@ -121,8 +119,7 @@ public class Logica {
 	public void presionoBoton(String g) {
 		
 		if (g.equals("Soldado1")) {
-		   obs.attach(new ObserverCreo());
-		   obs.notifyObservers(g);
+			objetosInstanciados.add(1);
 		}	
 	}
 			
@@ -130,8 +127,13 @@ public class Logica {
 	
 	public void presionoPanel(int x, int y) {
 		Celda pos = mapaCombate.getCelda(x, y);
-		ver.attach(new ObserverVerifico);	
-		ver.notifyObservers(pos);
+		
+		if (objetosInstanciados.poll() == 1) { 
+			ObserverCrear observer = new ObserverCrear();
+			ver.attach(observer);	
+			ver.notifyObservers(pos, "Soldado1");
+			ver.dettach(observer);
+		}
 		
 	}
 	

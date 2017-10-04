@@ -2,8 +2,10 @@ package Observer;
 
 import java.awt.List;
 import java.util.LinkedList;
+import java.util.Observable;
+import java.util.Observer;
 
-public class Observable implements Subject{
+public class ObservableCrear extends Observable{
 	private static LinkedList<Observer> observados = new LinkedList<Observer>();   
 
 	 
@@ -18,10 +20,9 @@ public class Observable implements Subject{
 		
 	}
 
-
-	public void notifyObservers() {
+	public void notifyObservers(String g) {
 		for (Observer o : observados){
-			o.update();
+			o.update(this, g);
 		}
 		 
 		

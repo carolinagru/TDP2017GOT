@@ -115,7 +115,7 @@ public class Mapa_GUI2 extends JFrame {
 		panel_2.add(btnS);
 		
 		
-		
+		//BOTON CREAR SOLDADO 
 		btnS.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
 				addMouseListener(new java.awt.event.MouseAdapter() {
@@ -123,7 +123,7 @@ public class Mapa_GUI2 extends JFrame {
 		            	int x=e.getX() - 334;
 						int y=e.getY() - 85;
 
-						System.out.println("Las coordenadas son -> X: "+x+" Y : "+y);
+						//System.out.println("Las coordenadas son -> X: "+x+" Y : "+y);
 
 						 int filas = (y - 40) / 40;
 						 int columnas = (x - 80 ) / 40;

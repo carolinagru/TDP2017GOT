@@ -56,7 +56,7 @@ public class Logica {
 	   
 	     mapaCombate = new Mapa(filas,columnas);
 	    
-	    Celda c = mapaCombate.getCelda(9,22);
+	    Celda c = mapaCombate.getCelda(9,9);
 	    
 	    Soldado sol = new S3(c);
 	     

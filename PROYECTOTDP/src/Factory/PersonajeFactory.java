@@ -2,7 +2,7 @@ package Factory;
 
 import Personajes.Personaje;
 
-/**
+/**NOOOOOOOOOOOOOOOOOOOOO
 public class PersonajeFactory implements PersonajeFactoryMethod{
 	public Personaje createPersonaje (String s){
 		if ( s.equals("Soldado1"))

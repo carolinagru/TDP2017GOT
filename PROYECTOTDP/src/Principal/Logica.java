@@ -37,8 +37,8 @@ public class Logica {
 	
 	protected int monedas;
 	protected int puntos;
-	protected LinkedList<Alien> aliensMapa;
-	protected LinkedList<Soldado> soldadosMapa;
+	protected LinkedList<Personaje> aliensMapa;
+	protected LinkedList<Personaje> soldadosMapa;
 	protected LinkedList<Objeto> objetosMapa;
 	protected JPanel panelMapa;
 	protected Mapa mapaCombate;
@@ -122,6 +122,11 @@ public class Logica {
 		}
 	}	
 	
+	public void presionoBotonBorrar() {
+		if (objetosInstanciados.size() != 0)
+			objetosInstanciados.remove();
+	}
+	
 	public void presionoPanel(int x, int y) {
 		Celda pos = mapaCombate.getCelda(x, y);
 		
@@ -130,7 +135,7 @@ public class Logica {
 			ob.attach(observer);	
 			ob.notifyObservers(pos, "Soldado1");
 
-			ob.dettach(observer);
+		//	ob.dettach(observer);
 		}
 		
 	}

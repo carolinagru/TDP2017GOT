@@ -142,10 +142,19 @@ public class Mapa_GUI2 extends JFrame {
 		panel_2.add(botonSoldado1);
 		botonSoldado1.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-				logica.presionoBoton("Soldado1");					
+				logica.presionoBoton("Soldado1");	
+				botonSoldado1.addActionListener(new ActionListener(){
+					public void actionPerformed(ActionEvent arg0) {
+						logica.presionoBotonBorrar();	
+							
+					}
+				
+				});
+				
 			}
 		
 		});
+		
 		
 		JButton botonSoldado2 = new JButton("S2");
 		botonSoldado2.setBounds(351, 22, 123, 31);

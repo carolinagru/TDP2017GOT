@@ -123,8 +123,15 @@ public class Logica {
 	}	
 	
 	public void presionoBotonBorrar() {
+<<<<<<< HEAD
 		if (objetosInstanciados.size() != 0)
 			objetosInstanciados.remove();
+=======
+		if(objetosInstanciados.size() != 0) {
+			objetosInstanciados.remove();
+		}
+		//panelMapa.remove(soldadosMapa.remove());
+>>>>>>> ea68c9ae5421900d716d13a4a82e0b21983a2419
 	}
 	
 	public void presionoPanel(int x, int y) {

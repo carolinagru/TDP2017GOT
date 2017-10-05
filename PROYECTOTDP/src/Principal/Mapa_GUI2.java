@@ -53,6 +53,7 @@ public class Mapa_GUI2 extends JFrame {
 	 * Create the frame.
 	 */
 	public Mapa_GUI2() {
+		setResizable(false);
 		//setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1350, 700);
@@ -81,7 +82,7 @@ public class Mapa_GUI2 extends JFrame {
 		
 		image = new ImageIcon(getClass().getResource("/Sprites/fondo/cesped.jpg")).getImage();
 
-		panel_3 = new JPanel() {
+		panel_3 = new JPanel(){
 		public void paint(Graphics g){
 	        g.drawImage(image, 0, 0, panel_3.getWidth(), panel_3.getHeight(), this);
 	        setOpaque(false);
@@ -141,7 +142,9 @@ public class Mapa_GUI2 extends JFrame {
 		botonSoldado1.setBounds(118, 22, 123, 31);
 		panel_2.add(botonSoldado1);
 		botonSoldado1.addActionListener(new ActionListener(){
+			boolean HaySoldado = false;
 			public void actionPerformed(ActionEvent arg0) {
+<<<<<<< HEAD
 				logica.presionoBoton("Soldado1");	
 				botonSoldado1.addActionListener(new ActionListener(){
 					public void actionPerformed(ActionEvent arg0) {
@@ -151,6 +154,15 @@ public class Mapa_GUI2 extends JFrame {
 				
 				});
 				
+=======
+				if(!HaySoldado) {
+					logica.presionoBoton("Soldado1");
+					HaySoldado = true;
+				}else{
+					logica.presionoBotonBorrar();
+					HaySoldado = false;
+				}					
+>>>>>>> ea68c9ae5421900d716d13a4a82e0b21983a2419
 			}
 		
 		});

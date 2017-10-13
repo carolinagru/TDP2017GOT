@@ -24,6 +24,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 
 import javax.swing.border.TitledBorder;
+import javax.swing.SwingConstants;
 
 
 public class Mapa_GUI2 extends JFrame {
@@ -54,7 +55,6 @@ public class Mapa_GUI2 extends JFrame {
 	 */
 	public Mapa_GUI2() {
 		setResizable(false);
-		//setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1350, 700);
 		contentPane = new JPanel();
@@ -95,17 +95,8 @@ public class Mapa_GUI2 extends JFrame {
 		contentPane.add(panel_3);
 		
 		logica = new Logica(panel_3);
+		//logica.setPanel(panel_3);
 
-		panel_3.addMouseListener(new java.awt.event.MouseAdapter() {
-			public void mousePressed(MouseEvent e) {
-				int x=e.getX() ;
-				int y=e.getY() ;
-				int filas = (y - 40) / 40;
-				int columnas = (x - 80 ) / 40;
-				
-					logica.presionoPanel(filas,columnas);
-			}
-		}); 
 		
 		// B O T O N E S     O B J E T O S--------------------------------------------------------------------------------------------------------------------------------------------------------------
 		JButton botonObjeto1 = new JButton("Ametralladora");
@@ -113,7 +104,6 @@ public class Mapa_GUI2 extends JFrame {
 		panel.add(botonObjeto1);
 		botonObjeto1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				logica.presionoBoton("o1");
 			}
 		});
 
@@ -123,7 +113,6 @@ public class Mapa_GUI2 extends JFrame {
 		panel.add(botonObjeto2);
 		botonObjeto2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				logica.presionoBoton("o2");
 			}
 		});
 		
@@ -132,82 +121,113 @@ public class Mapa_GUI2 extends JFrame {
 		panel.add(botonObjeto3);
 		botonObjeto3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				logica.presionoBoton("o3");				
 			}
 		});
-		
 		// B O T O N E S    S O L D A D O S--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 		JButton botonSoldado1 = new JButton("S1");
-		botonSoldado1.setBounds(118, 22, 123, 31);
+		botonSoldado1.setBounds(34, 22, 123, 31);
 		panel_2.add(botonSoldado1);
 		botonSoldado1.addActionListener(new ActionListener(){
-			boolean HaySoldado = false;
 			public void actionPerformed(ActionEvent arg0) {
-<<<<<<< HEAD
-				logica.presionoBoton("Soldado1");	
-				botonSoldado1.addActionListener(new ActionListener(){
-					public void actionPerformed(ActionEvent arg0) {
-						logica.presionoBotonBorrar();	
-							
-					}
-				
-				});
-				
-=======
-				if(!HaySoldado) {
-					logica.presionoBoton("Soldado1");
-					HaySoldado = true;
-				}else{
-					logica.presionoBotonBorrar();
-					HaySoldado = false;
-				}					
->>>>>>> ea68c9ae5421900d716d13a4a82e0b21983a2419
-			}
-		
-		});
+				panel_3.addMouseListener(new java.awt.event.MouseAdapter() {
+					public void mousePressed(MouseEvent e) {
+						int x=e.getX() ;
+						int y=e.getY() ;
+						int filas = y / 40;
+						int columnas = x  / 40;
+						
+					  logica.crearS1(filas,columnas);
+
+					}});
+			}});
 		
 		
 		JButton botonSoldado2 = new JButton("S2");
-		botonSoldado2.setBounds(351, 22, 123, 31);
+		botonSoldado2.setBounds(240, 22, 123, 31);
 		panel_2.add(botonSoldado2);
 		botonSoldado2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				logica.presionoBoton("Soldado2");		
-			}
-		});
+				panel_3.addMouseListener(new java.awt.event.MouseAdapter() {
+					public void mousePressed(MouseEvent e) {
+						int x=e.getX() ;
+						int y=e.getY() ;
+						int filas = y / 40;
+						int columnas = x  / 40;
+
+					  logica.crearS2(filas,columnas);
+
+					}});
+			}});
 		
 		JButton botonSoldado3 = new JButton("S3");
-		botonSoldado3.setBounds(598, 22, 123, 31);
+		botonSoldado3.setBounds(441, 22, 123, 31);
 		panel_2.add(botonSoldado3);
 		botonSoldado3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				logica.presionoBoton("Soldado3");
-			}
-		});
+				panel_3.addMouseListener(new java.awt.event.MouseAdapter() {
+					public void mousePressed(MouseEvent e) {
+						int x=e.getX() ;
+						int y=e.getY() ;
+						int filas = y / 40;
+						int columnas = x  / 40;
+
+					  logica.crearS3(filas,columnas);
+
+					}});
+			}});
 		
 		JButton botonSoldado4 = new JButton("S4");
-		botonSoldado4.setBounds(834, 22, 123, 31);
+		botonSoldado4.setBounds(651, 22, 123, 31);
 		panel_2.add(botonSoldado4);
 		botonSoldado4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				logica.presionoBoton("Soldado4");
-			}
-		});
+				panel_3.addMouseListener(new java.awt.event.MouseAdapter() {
+					public void mousePressed(MouseEvent e) {
+						int x=e.getX() ;
+						int y=e.getY() ;
+						int filas = y / 40;
+						int columnas = x  / 40;
+
+					  logica.crearS4(filas,columnas);
+
+					}});
+			}});
 		
 		JButton botonSoldado5 = new JButton("S5");
-		botonSoldado5.setBounds(1063, 22, 123, 31);
+		botonSoldado5.setBounds(855, 22, 123, 31);
 		panel_2.add(botonSoldado5);
 		botonSoldado5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				logica.presionoBoton("Soldado5");
-			}
-		});
-		
+				panel_3.addMouseListener(new java.awt.event.MouseAdapter() {
+					public void mousePressed(MouseEvent e) {
+						int x=e.getX() ;
+						int y=e.getY() ;
+						int filas = y / 40;
+						int columnas = x  / 40;
 
-		 
+					  logica.crearS5(filas,columnas);
+
+					}});
+			}});
+		
+			JButton botonBorrar = new JButton("Borrar ");
+			botonBorrar.setBounds(1211, 11, 89, 54);
+			panel_2.add(botonBorrar);
+				botonBorrar.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						panel_3.addMouseListener(new java.awt.event.MouseAdapter() {
+							public void mousePressed(MouseEvent e) {
+								int x=e.getX() ;
+								int y=e.getY() ;
+								int filas = y / 40;
+								int columnas = x  / 40;
+								logica.verificarPosicion(filas, columnas);
+							  
+
+							}});
+					}});
 		
 		
 	}
-	
 }

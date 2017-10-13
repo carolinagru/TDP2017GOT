@@ -9,7 +9,7 @@ public class Mapa {
 	public Mapa(int f, int c){
 		this.columna = c;
 		this.fila = f;
-		
+		System.out.println("filas y columnas de mapa "+fila+columna);
 		this.mapa = new Celda[fila][columna];
 		
 		for(int i = 0; i < fila; i++){

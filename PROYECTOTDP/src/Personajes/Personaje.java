@@ -25,7 +25,9 @@ public class Personaje extends Obstaculo{
 	public JLabel getGrafico() {
 		return grafico.getGrafico();
 	}
-	
+	public Celda getCelda() {
+		return pos;
+	}
 	
 
 }

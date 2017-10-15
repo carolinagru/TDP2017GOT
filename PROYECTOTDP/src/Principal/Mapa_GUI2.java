@@ -136,8 +136,9 @@ public class Mapa_GUI2 extends JFrame {
 						int y=e.getY() ;
 						int filas = y / 40;
 						int columnas = x  / 40;
-						
-					  logica.crearS1(filas,columnas);
+					 System.out.println("Creo un soldado en la posicion => Fila :"+filas + " - Columna :"+ columnas );
+					  logica.crearS1(columnas,filas);
+					   
 
 					}});
 			}});
@@ -155,7 +156,7 @@ public class Mapa_GUI2 extends JFrame {
 						int filas = y / 40;
 						int columnas = x  / 40;
 
-					  logica.crearS2(filas,columnas);
+					  logica.crearS2(columnas,filas);
 
 					}});
 			}});
@@ -172,7 +173,7 @@ public class Mapa_GUI2 extends JFrame {
 						int filas = y / 40;
 						int columnas = x  / 40;
 
-					  logica.crearS3(filas,columnas);
+					  logica.crearS3(columnas,filas);
 
 					}});
 			}});
@@ -189,7 +190,7 @@ public class Mapa_GUI2 extends JFrame {
 						int filas = y / 40;
 						int columnas = x  / 40;
 
-					  logica.crearS4(filas,columnas);
+					  logica.crearS4(columnas,filas);
 
 					}});
 			}});

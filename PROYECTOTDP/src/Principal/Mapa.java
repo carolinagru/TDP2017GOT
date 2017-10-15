@@ -26,11 +26,7 @@ public class Mapa {
 	protected Obstaculo obs;
 	protected JPanel panel;
 
-<<<<<<< HEAD
 	public Mapa(int f, int c, JPanel p){
-=======
-	public Mapa(int c, int f){
->>>>>>> f913a012459ba4cd03804ea9763844a6dae4bb95
 		this.columna = c;
 		this.fila = f;
 		panel = p;

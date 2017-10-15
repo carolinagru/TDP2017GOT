@@ -102,55 +102,35 @@ public class Logica {
 	
 	public void crearS1(int x, int y) {
 		Celda c = mapaCombate.getCelda(x, y);
-		factory = new S1factory();
-		Personaje p =factory.createPersonaje(c);
-		l = p.getGrafico();
-		panelMapa.add(l);
-		l.repaint();
-		soldadosMapa.addLast(p);
+		factory = new S1factory(panelMapa);
+		soldadosMapa.addLast(factory.createPersonaje(c));
 
 	}
 	
 	public void crearS2(int x, int y) {
 		Celda c = mapaCombate.getCelda(x, y);	
-		factory = new S2factory();
-		Personaje p =factory.createPersonaje(c);
-		l = p.getGrafico();
-		panelMapa.add(l);
-		l.repaint();
-		soldadosMapa.addLast(p);		
+		factory = new S2factory(panelMapa);
+		soldadosMapa.addLast(factory.createPersonaje(c));		
 	}
 	
 	public void crearS3(int x, int y) {
 		Celda c = mapaCombate.getCelda(x, y);
-		factory = new S3factory();
-		Personaje p =factory.createPersonaje(c);
-		l = p.getGrafico();
-		panelMapa.add(l);
-		l.repaint();
-		soldadosMapa.addLast(p);
+		factory = new S3factory(panelMapa);
+		soldadosMapa.addLast(factory.createPersonaje(c));
 		
 	}
 	
 	public void crearS4(int x, int y) {
 		Celda c = mapaCombate.getCelda(x, y);
-		factory = new S4factory();
-		Personaje p =factory.createPersonaje(c);
-		l = p.getGrafico();
-		panelMapa.add(l);
-		l.repaint();
-		soldadosMapa.addLast(p);
+		factory = new S4factory(panelMapa);
+		soldadosMapa.addLast(factory.createPersonaje(c));
 
 	}
 	
 	public void crearS5(int x, int y) {
 		Celda c = mapaCombate.getCelda(x, y);
-		factory = new S5factory();
-		Personaje p =factory.createPersonaje(c);
-		l = p.getGrafico();
-		panelMapa.add(l);
-		l.repaint();
-		soldadosMapa.addLast(p);
+		factory = new S5factory(panelMapa);
+		soldadosMapa.addLast(factory.createPersonaje(c));
 
 	}
 	

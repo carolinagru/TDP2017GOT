@@ -11,11 +11,18 @@ import Principal.Celda;
 import Principal.Logica;
 
 public class S4factory implements PersonajesFactoryMethod {
-	
+protected JPanel panel;
+protected JLabel l;
+
+	public S4factory(JPanel p) {
+		panel= p;
+	}
 	
 	public Personaje createPersonaje (Celda c) {
 		Personaje p = new S4(c);
-		
+		l = p.getGrafico();
+		panel.add(l);
+		l.repaint();
 		
 	 return p;	
 	}

@@ -27,5 +27,9 @@ public class Celda {
 	public int getColumna(){
 		return columna;
 	}
+	public void set(int x, int y) {
+		fila = x;
+		columna = y;
+	}
 	
 }

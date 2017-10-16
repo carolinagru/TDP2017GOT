@@ -1,5 +1,13 @@
 package Objetos;
 
-public abstract class Objeto {
+import Principal.Celda;
+
+public class Objeto extends Obstaculo {
+	
+	public Objeto(Celda pos) {
+		this.pos = pos;
+		grafico = null;
+		
+	}
 
 }

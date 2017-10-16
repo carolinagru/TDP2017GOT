@@ -11,7 +11,11 @@ import Principal.Celda;
 import Principal.Logica;
 
 public class A6factory  implements PersonajesFactoryMethod {
+protected JPanel panel;
 	
+	public A6factory(JPanel p) {
+		panel= p;
+	}
 	public Personaje createPersonaje (Celda c) {
 		Personaje p = new A6(c);
 		

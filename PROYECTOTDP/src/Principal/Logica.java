@@ -2,6 +2,9 @@ package Principal;
 
 
 import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import Personajes.*;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -11,6 +14,7 @@ import java.util.Random;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 import Factory.A1factory;
 import Factory.PersonajesFactoryMethod;
@@ -42,9 +46,9 @@ public class Logica {
 	
 	protected int monedas;
 	protected int puntos;
+	protected Timer t1;
 	protected LinkedList<Personaje> aliensMapa;
 	protected LinkedList<Personaje> soldadosMapa;
-	protected LinkedList<Objeto> objetosMapa;
 	protected JPanel panelMapa;
 	protected Mapa mapaCombate;
 	private static int tamanioCelda = 40;
@@ -60,81 +64,73 @@ public class Logica {
 		puntos=0;
 		aliensMapa=new LinkedList();
 		soldadosMapa= new LinkedList();
-		objetosMapa= new LinkedList();
 	    int filas = (width - 40 ) / tamanioCelda;
 	    int columnas = (height - 80) / tamanioCelda;
 	   
-	     mapaCombate = new Mapa(filas,columnas);
+	     mapaCombate = new Mapa(filas,columnas,p);
 	     System.out.println("filas de constructor de logica "+filas+" columnas de constructor de logica "+columnas);
 	     
+	     insertarObjetos();
 	}
 	
-	public void setPanel(JPanel p) {
-		panelMapa = p;
-	}
-	public JPanel getPanel() {
-		return panelMapa;
-	}
 	public void insertarObjetos() {
+		mapaCombate.insertarObjetos();
 		activarMenu();
 	}
 	
 	public void activarMenu() {
 		
-    
+	    insertarEnemigos();
 	}
+	
+	public void insertarEnemigos() {
+		
+	 t1 = new Timer (5000, new ActionListener (){
+	          public void actionPerformed(ActionEvent e){
+	         	if(aliensMapa.size() < 4)
+	         		aliensMapa.addLast(mapaCombate.insertarEnemigo());
+	          }
+	      });
+	   t1.start();
 
+	}
+	
 	public void moverAlien(Alien a) {
 
 	
 	}
+	
 	public void crearS1(int x, int y) {
 		Celda c = mapaCombate.getCelda(x, y);
-		factory = new S1factory();
-		Personaje p =factory.createPersonaje(c);
-		l = p.getGrafico();
-		panelMapa.add(l);
-		l.repaint();
-		soldadosMapa.addLast(p);
+		factory = new S1factory(panelMapa);
+		soldadosMapa.addLast(factory.createPersonaje(c));
 
 	}
+	
 	public void crearS2(int x, int y) {
 		Celda c = mapaCombate.getCelda(x, y);	
-		factory = new S2factory();
-		Personaje p =factory.createPersonaje(c);
-		l = p.getGrafico();
-		panelMapa.add(l);
-		l.repaint();
-		soldadosMapa.addLast(p);		
+		factory = new S2factory(panelMapa);
+		soldadosMapa.addLast(factory.createPersonaje(c));		
 	}
+	
 	public void crearS3(int x, int y) {
 		Celda c = mapaCombate.getCelda(x, y);
-		factory = new S3factory();
-		Personaje p =factory.createPersonaje(c);
-		l = p.getGrafico();
-		panelMapa.add(l);
-		l.repaint();
-		soldadosMapa.addLast(p);
+		factory = new S3factory(panelMapa);
+		soldadosMapa.addLast(factory.createPersonaje(c));
 		
 	}
+	
 	public void crearS4(int x, int y) {
 		Celda c = mapaCombate.getCelda(x, y);
-		factory = new S4factory();
-		Personaje p =factory.createPersonaje(c);
-		l = p.getGrafico();
-		panelMapa.add(l);
-		l.repaint();
-		soldadosMapa.addLast(p);
+		factory = new S4factory(panelMapa);
+		soldadosMapa.addLast(factory.createPersonaje(c));
 
 	}
+	
 	public void crearS5(int x, int y) {
 		Celda c = mapaCombate.getCelda(x, y);
-		factory = new S5factory();
-		Personaje p =factory.createPersonaje(c);
-		l = p.getGrafico();
-		panelMapa.add(l);
-		l.repaint();
-		soldadosMapa.addLast(p);
+		factory = new S5factory(panelMapa);
+		soldadosMapa.addLast(factory.createPersonaje(c));
 
 	}
 	
@@ -149,12 +145,14 @@ public class Logica {
 		}
 	  
 	}
+	
 	public void venderSoldado(Personaje p) {
 		panelMapa.remove(p.getGrafico());
 		panelMapa.revalidate();
 		panelMapa.repaint();
 		
 	}
+	
 	
 	
 }

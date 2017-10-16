@@ -10,6 +10,8 @@ import java.util.Random;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Factory.A1factory;
+import Factory.PersonajesFactoryMethod;
 import Objetos.Objeto;
 import Objetos.ObjetoAgua;
 import Objetos.ObjetoFuego;
@@ -18,6 +20,7 @@ import Objetos.ObjetoPiedra;
 import Objetos.Obstaculo;
 import Personajes.A1;
 import Personajes.Alien;
+import Personajes.Personaje;
 
 public class Mapa {
 	private Celda mapa[][];
@@ -107,14 +110,13 @@ public class Mapa {
 		panel.repaint();
 	}
 	
-	public Alien insertarEnemigo() {
+	public Personaje insertarEnemigo(PersonajesFactoryMethod factory) {
 		Random r = new Random();
 		int x = (int ) (Math.random() * 10);
 		System.out.println("fila : "+ x);
 		Celda c = getCelda(x,22);
-		Alien a = new A1(c);
-		insertar(a.getGrafico());
-	  return a;
+		factory = new A1factory(panel);
+	  return factory.createPersonaje(c);
 	}
 }
 

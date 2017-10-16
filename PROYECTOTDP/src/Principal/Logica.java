@@ -88,7 +88,7 @@ public class Logica {
 	 t1 = new Timer (5000, new ActionListener (){
 	          public void actionPerformed(ActionEvent e){
 	         	if(aliensMapa.size() < 4)
-	         		aliensMapa.addLast(mapaCombate.insertarEnemigo());
+	         		aliensMapa.addLast(mapaCombate.insertarEnemigo(factory));
 	          }
 	      });
 	   t1.start();

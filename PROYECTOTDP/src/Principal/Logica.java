@@ -39,6 +39,9 @@ import Personajes.S3;
 import Personajes.S4;
 import Personajes.S5;
 import Personajes.Soldado;
+import Visitor.Visitor;
+import Visitor.VisitorAlien;
+import Visitor.VisitorSoldado;
 import Personajes.*;
 
 
@@ -64,11 +67,48 @@ public class Logica {
 		puntos=0;
 		aliensMapa=new LinkedList();
 		soldadosMapa= new LinkedList();
-	    int columnas = ((width - 40 ) / tamanioCelda)+1;
-	    int filas = ((height - 80) / tamanioCelda)+1;
-	   
-	     mapaCombate = new Mapa(columnas,filas,p);
+	    int filas = ((width - 40 ) / tamanioCelda)+1;
+	    int columnas = ((height - 80) / tamanioCelda)+2;
+	    
+	     mapaCombate = new Mapa(filas,columnas,p);
 	     System.out.println("columnas de constructor de logica "+columnas+" filas de constructor de logica "+filas);
+	     
+	     //Creo soldados y aliens para comprobar visitor
+	     crearS1(2,2);
+	     crearA1(3,2);
+	     
+	    
+	     Personaje s1 = soldadosMapa.getLast();
+	     Personaje a1 = aliensMapa.getLast();
+ 	     
+	     System.out.println("Vida Soldado 1 :"+s1.getVida());
+	     System.out.println("Vida Alien   1 :"+a1.getVida());
+	     System.out.println("----- Soldado s1 ataca a Alien a1 ");
+	     
+	     VisitorSoldado v1 = new VisitorSoldado (s1);
+	     a1.Acept(v1);
+	     VisitorAlien v2 = new VisitorAlien (a1);
+	     
+	     
+	    
+	     
+	     System.out.println("Vida Soldado 1 :"+s1.getVida());
+	     System.out.println("Vida Alien   1 :"+a1.getVida());
+	     
+	     System.out.println("------ Soldado s1 ataca a Soldado s1 ");
+	     s1.Acept(v1);
+	     System.out.println("Vida Soldado 1 :"+s1.getVida());
+	     System.out.println("Vida Alien   1 :"+a1.getVida());
+	     
+	     System.out.println("------ Alien a1 ataca a Soldado s1 ");
+	     s1.Acept(v2);
+	     System.out.println("Vida Soldado 1 :"+s1.getVida());
+	     System.out.println("Vida Alien   1 :"+a1.getVida());
+	     
+	     System.out.println("------ Alien a1 ataca a Alien a1 ");
+	     a1.Acept(v2);
+	     System.out.println("Vida Soldado 1 :"+s1.getVida());
+	     System.out.println("Vida Alien   1 :"+a1.getVida());
 	     
 	     insertarObjetos();
 	}
@@ -132,6 +172,13 @@ public class Logica {
 		factory = new S5factory(panelMapa);
 		soldadosMapa.addLast(factory.createPersonaje(c));
 
+	}
+	
+	//Creo aliens
+	public void crearA1 ( int x, int y ){
+		Celda c = mapaCombate.getCelda(x, y);
+		factory = new A1factory(panelMapa);
+		aliensMapa.addLast(factory.createPersonaje(c));
 	}
 	
 	public void verificarPosicion(int x, int y) {

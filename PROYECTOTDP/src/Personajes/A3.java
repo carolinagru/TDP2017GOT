@@ -4,6 +4,7 @@ import javax.swing.ImageIcon;
 
 import Graficos.Alien3Grafico;
 import Principal.Celda;
+import Visitor.Visitor;
 
 public class A3 extends Alien{
 	
@@ -15,5 +16,16 @@ public class A3 extends Alien{
 		grafico = new Alien3Grafico(pos.getFila(), pos.getColumna());
 		
 	}
+
+	@Override
+	public void Acept(Visitor v) {
+		v.visitAlien(this);
+		
+	}
+	
+	public void Atacar(Personaje p) {
+		 
+	}
+	
 	
 }

@@ -114,7 +114,7 @@ public class Mapa {
 		Random r = new Random();
 		int x = (int ) (Math.random() * 10);
 		System.out.println("fila : "+ x);
-		Celda c = getCelda(x,22);
+		Celda c = getCelda(24,x);
 		factory = new A1factory(panel);
 	  return factory.createPersonaje(c);
 	}

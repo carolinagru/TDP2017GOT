@@ -64,11 +64,11 @@ public class Logica {
 		puntos=0;
 		aliensMapa=new LinkedList();
 		soldadosMapa= new LinkedList();
-	    int filas = (width - 40 ) / tamanioCelda;
-	    int columnas = (height - 80) / tamanioCelda;
+	    int columnas = ((width - 40 ) / tamanioCelda)+1;
+	    int filas = ((height - 80) / tamanioCelda)+1;
 	   
-	     mapaCombate = new Mapa(filas,columnas,p);
-	     System.out.println("filas de constructor de logica "+filas+" columnas de constructor de logica "+columnas);
+	     mapaCombate = new Mapa(columnas,filas,p);
+	     System.out.println("columnas de constructor de logica "+columnas+" filas de constructor de logica "+filas);
 	     
 	     insertarObjetos();
 	}

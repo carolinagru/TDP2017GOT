@@ -29,7 +29,7 @@ public class Mapa {
 	protected Obstaculo obs;
 	protected JPanel panel;
 
-	public Mapa(int f, int c, JPanel p){
+	public Mapa(int c, int f, JPanel p){
 		this.columna = c;
 		this.fila = f;
 		panel = p;

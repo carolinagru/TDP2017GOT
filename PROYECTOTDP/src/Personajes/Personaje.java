@@ -2,15 +2,17 @@ package Personajes;
 
 
 import Principal.Celda;
+import Visitor.*;
+
 import javax.swing.JLabel;
 
 import Graficos.PersonajeGrafico;
 import Objetos.Obstaculo;
 
-public class Personaje extends Obstaculo{
+public abstract class Personaje extends Obstaculo{
 	
-	protected int vida;
-	protected int fuerza;
+	protected float vida = 100;
+	public float fuerza;
 	protected int cantCeldas;
 	protected int distanciaAtaque;
 	
@@ -20,8 +22,21 @@ public class Personaje extends Obstaculo{
 		grafico = null;
 		
 	}
+	public  abstract void Atacar ( Personaje p); 
+		 
+	 
 	
+	public abstract void Acept ( Visitor v);
 	
+	public  void setVida ( float v){
+		vida = v;
+	}
 	
-
+	public float getVida () {
+		return vida;
+	}
+	
+	public float getFuerza (){
+		return fuerza;
+	}
 }

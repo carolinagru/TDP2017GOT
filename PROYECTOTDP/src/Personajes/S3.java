@@ -8,6 +8,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import Graficos.Soldado1Grafico;
 import Principal.Celda;
+import Visitor.Visitor;
 
 public class S3 extends Soldado {
 	
@@ -17,6 +18,17 @@ public class S3 extends Soldado {
 	public S3(Celda pos) {
 		super(pos);
 		grafico = new Soldado1Grafico(pos.getFila(), pos.getColumna());
+	}
+
+
+	 
+	public void Acept(Visitor v) {
+		v.visitSoldado(this);
+		
+	}
+	
+	public void Atacar(Personaje p) {
+		 
 	}
 	
 

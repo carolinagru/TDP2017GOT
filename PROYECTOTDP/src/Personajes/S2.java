@@ -8,6 +8,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import Graficos.Soldado1Grafico;
 import Principal.Celda;
+import Visitor.Visitor;
 
 public class S2 extends Soldado{
 	
@@ -18,7 +19,17 @@ public class S2 extends Soldado{
 		super(pos);
 		grafico = new Soldado1Grafico(pos.getFila(), pos.getColumna());
 	}
-	
 
+
+	@Override
+	public void Acept(Visitor v) {
+		v.visitSoldado(this);
+		
+	}
+	
+	public void Atacar(Personaje p) {
+		 
+	}
+	
 
 }

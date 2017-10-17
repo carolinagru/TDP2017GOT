@@ -5,16 +5,29 @@ import javax.swing.ImageIcon;
 import Graficos.Alien1Grafico;
 import Graficos.Alien3Grafico;
 import Principal.Celda;
+import Visitor.Visitor;
 
 public class A1 extends Alien{
 	
 	protected static int moneda=25;
 	protected static int punto=15;
 
-	public A1(Celda pos ) {		
+	public A1(Celda pos ) {	
 		super(pos);
+		this.fuerza = (float) 0.7;
+		
 		this.grafico = new Alien1Grafico(pos.getFila(), pos.getColumna());
 		
+	}
+
+ 
+	public void Acept(Visitor v) {
+		 v.visitAlien(this);
+	}
+
+ 
+	public void Atacar(Personaje p) {
+ 
 	}
 	
 }

@@ -23,7 +23,7 @@ public class PersonajeGrafico {
 		
 	public JLabel getGrafico() {
 		label= new JLabel(image);
-		this.label.setBounds(this.pos.x, this.pos.y, width, height); 
+		this.label.setBounds(this.pos.x, this.pos.y, 55, 55); 
 		ImageIcon aux = (ImageIcon)image;
 		Icon icono = new ImageIcon(aux.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
 		label.setIcon(icono);

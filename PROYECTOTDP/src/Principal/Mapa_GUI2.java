@@ -207,7 +207,7 @@ public class Mapa_GUI2 extends JFrame {
 						int filas = y / 40;
 						int columnas = x  / 40;
 
-					  logica.crearS5(filas,columnas);
+					  logica.crearS5(columnas,filas);
 
 					}});
 			}});

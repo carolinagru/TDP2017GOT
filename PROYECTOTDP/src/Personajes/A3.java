@@ -17,15 +17,7 @@ public class A3 extends Alien{
 		
 	}
 
-	@Override
-	public void Acept(Visitor v) {
-		v.visitAlien(this);
-		
-	}
 	
-	public void Atacar(Personaje p) {
-		 
-	}
 	
 	
 }

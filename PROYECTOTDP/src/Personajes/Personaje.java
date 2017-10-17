@@ -15,18 +15,14 @@ public abstract class Personaje extends Obstaculo{
 	public float fuerza;
 	protected int cantCeldas;
 	protected int distanciaAtaque;
-	
+	protected Visitor v;
+
 	
 	public Personaje ( Celda pos){
 		this.pos = pos;
 		grafico = null;
 		
 	}
-	public  abstract void Atacar ( Personaje p); 
-		 
-	 
-	
-	public abstract void Acept ( Visitor v);
 	
 	public  void setVida ( float v){
 		vida = v;
@@ -39,4 +35,11 @@ public abstract class Personaje extends Obstaculo{
 	public float getFuerza (){
 		return fuerza;
 	}
+	public Visitor getVisitor() {
+		return v;
+	}
+	public Elemento getElemento() {
+		return e;
+	}
+	
 }

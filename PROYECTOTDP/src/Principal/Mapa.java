@@ -24,20 +24,19 @@ import Personajes.Personaje;
 
 public class Mapa {
 	private Celda mapa[][];
-	private int columna, fila;
+	private int columnas, filas;
 	protected LinkedList<Obstaculo> objetosMapa;
 	protected Obstaculo obs;
 	protected JPanel panel;
 
 	public Mapa(int c, int f, JPanel p){
-		this.columna = c;
-		this.fila = f;
+		this.filas = f;
+		this.columnas = c;
 		panel = p;
-		System.out.println("filas y columnas de mapa "+fila+columna);
-		this.mapa = new Celda[fila][columna];
+		this.mapa = new Celda[filas][columnas];
 		
-		for(int i = 0; i < fila; i++){
-			for(int j = 0; j < columna; j++){
+		for(int i = 0; i < filas; i++){
+			for(int j = 0; j < columnas; j++){
 				this.mapa[i][j] = new Celda( i, j);
 			}
 		}
@@ -46,7 +45,7 @@ public class Mapa {
 	}
 	
 	public Celda getCelda(int x, int y){
-		if((x < this.fila) && (x >= 0) && (y < this.columna) && (y >= 0))
+		if((x < this.filas) && (x >= 0) && (y < this.columnas) && (y >= 0))
 			return this.mapa[x][y];
 		return null;
 	}
@@ -56,11 +55,11 @@ public class Mapa {
 	}
 
 	public int getColumna() {
-		return columna;
+		return columnas;
 	}
 
 	public int getFila() {
-		return fila;
+		return filas;
 	}
 	
 	public void insertarObjetos() {
@@ -112,11 +111,42 @@ public class Mapa {
 	
 	public Personaje insertarEnemigo(PersonajesFactoryMethod factory) {
 		Random r = new Random();
-		int x = (int ) (Math.random() * 10);
-		System.out.println("fila : "+ x);
+		int x = (int ) (Math.random() * 11);
 		Celda c = getCelda(24,x);
 		factory = new A1factory(panel);
-	  return factory.createPersonaje(c);
+		Personaje p = factory.createPersonaje(c);
+		moverAlien(p);
+	  return p;
 	}
+	
+	public Celda siguienteCelda(Celda c) {
+		int col = c.getFila()-1;		
+		return getCelda(col,c.getColumna());
+	}
+	
+	public void moverAlien(Personaje p) {
+		
+	Celda c = p.getCelda();	
+	
+		for (int i = 0; i < columnas; i++ ) {
+			if (siguienteCelda(c).getElemento() == null) {
+				c = siguienteCelda(c);
+				p.setCelda(c.getColumna(), c.getFila());
+				c.setElemento(p);
+				p.actualizarGrafico();
+			}		
+					
+		}
+		
+	}
+	
+	public void eliminar(Personaje p) {
+		panel.remove(p.getGrafico());
+		panel.revalidate();
+		panel.repaint();
+		
+	}
+	
+	
 }
 

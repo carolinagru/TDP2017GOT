@@ -19,12 +19,5 @@ public class A6 extends Alien{
 	}
 
  
-	public void Acept(Visitor v) {
-		v.visitAlien(this);
-		
-	}
-	public void Atacar(Personaje p) {
-		 
-	}
 	
 }

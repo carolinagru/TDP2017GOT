@@ -6,6 +6,7 @@ import Graficos.Alien1Grafico;
 import Graficos.Alien3Grafico;
 import Principal.Celda;
 import Visitor.Visitor;
+import Visitor.VisitorAlien;
 
 public class A1 extends Alien{
 	
@@ -14,6 +15,8 @@ public class A1 extends Alien{
 
 	public A1(Celda pos ) {	
 		super(pos);
+		
+		
 		this.fuerza = (float) 0.7;
 		
 		this.grafico = new Alien1Grafico(pos.getFila(), pos.getColumna());
@@ -21,13 +24,6 @@ public class A1 extends Alien{
 	}
 
  
-	public void Acept(Visitor v) {
-		 v.visitAlien(this);
-	}
-
- 
-	public void Atacar(Personaje p) {
- 
-	}
+	
 	
 }

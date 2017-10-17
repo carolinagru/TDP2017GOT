@@ -7,9 +7,9 @@ public class Celda {
 	protected int fila;
 	protected int columna;
 	
-	public Celda(int x, int y) {
-		fila=x;
-		columna=y;
+	public Celda(int f, int c) {
+		fila=f;
+		columna=c;
 		
 	}
 	public Obstaculo getElemento() {

@@ -21,15 +21,6 @@ public class S2 extends Soldado{
 	}
 
 
-	@Override
-	public void Acept(Visitor v) {
-		v.visitSoldado(this);
-		
-	}
-	
-	public void Atacar(Personaje p) {
-		 
-	}
 	
 
 }

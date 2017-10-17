@@ -29,6 +29,14 @@ public class PersonajeGrafico {
 		label.setIcon(icono);
 		return label;
 	}
+	
+	public void actualizarGrafico(){		
+		
+		   ImageIcon aux=(ImageIcon) image;
+		   Icon icono = new ImageIcon(aux.getImage().getScaledInstance(label.getWidth(), label.getWidth(), Image.SCALE_DEFAULT));
+		   label.setIcon(icono);
+		   label.setBounds(pos.x, pos.y, width, height);
+		}
 }
 
  

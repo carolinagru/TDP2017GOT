@@ -4,24 +4,44 @@ import Personajes.Alien;
 import Personajes.Personaje;
 import Personajes.Soldado;
 
-public class VisitorAlien extends Visitor {
-	protected Personaje miPersonaje;
-	
-	public VisitorAlien (Personaje a){
-		miPersonaje = a;
-	}
-	public void visitAlien(Alien a) {
-		
-		 
+public class VisitorAlien implements Visitor {
+
+	@Override
+	public boolean puedePasar(ElementoAlien a) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
-	
-	public void visitSoldado(Soldado s) {
-		float vida = s.getVida();
-		s.setVida(miPersonaje.fuerza*vida);
-		 miPersonaje.Atacar(s);
-		
+	@Override
+	public boolean puedePasar(ElementoSoldado a) {
+		// TODO Auto-generated method stub
+		return false;
 	}
+
+	@Override
+	public boolean puedePasar(ElementoAgua a) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean puedePasar(ElementoFuego a) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean puedePasar(ElementoFuente a) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean puedePasar(ElementoPiedra a) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
 	
 
 }

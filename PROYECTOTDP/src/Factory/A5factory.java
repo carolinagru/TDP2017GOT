@@ -12,14 +12,18 @@ import Principal.Logica;
 
 public class A5factory implements PersonajesFactoryMethod {
 protected JPanel panel;
-	
+protected JLabel l;
+
 	public A5factory(JPanel p) {
 		panel= p;
 	}
 	
 	public Personaje createPersonaje (Celda c) {
 		Personaje p = new A5(c);
-		
+		c.setElemento(p);
+		l = p.getGrafico();
+		panel.add(l);
+		l.repaint();
 		
 	 return p;	
 	}

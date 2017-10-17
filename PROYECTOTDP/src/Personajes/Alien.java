@@ -13,21 +13,11 @@ public  class Alien extends Personaje {
      
      public Alien(Celda pos) {
  		super(pos);
- 		 
+ 		v = new VisitorAlien(); 
+ 		e = new ElementoAlien();
  	}
 
-	 
-	public void Atacar(Personaje p) {
-		
-		 float vida = p.getVida ();
-		 p.setVida(this.fuerza*vida);
-		
-	}
-
-
-	public void Acept(Visitor v) {
-		v.visitAlien(this);
-	}
+	
      
      
 

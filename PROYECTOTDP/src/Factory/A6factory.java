@@ -12,13 +12,17 @@ import Principal.Logica;
 
 public class A6factory  implements PersonajesFactoryMethod {
 protected JPanel panel;
-	
+protected JLabel l;
+
 	public A6factory(JPanel p) {
 		panel= p;
 	}
 	public Personaje createPersonaje (Celda c) {
 		Personaje p = new A6(c);
-		
+		c.setElemento(p);
+		l = p.getGrafico();
+		panel.add(l);
+		l.repaint();
 		
 	 return p;	
 	}

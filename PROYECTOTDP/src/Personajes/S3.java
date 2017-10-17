@@ -22,14 +22,6 @@ public class S3 extends Soldado {
 
 
 	 
-	public void Acept(Visitor v) {
-		v.visitSoldado(this);
-		
-	}
-	
-	public void Atacar(Personaje p) {
-		 
-	}
 	
 
 

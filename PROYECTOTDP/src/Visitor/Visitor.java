@@ -2,9 +2,20 @@ package Visitor;
 
 import Personajes.*;
 
-public abstract class Visitor {
-	public abstract void visitAlien (Alien a );
+public interface Visitor {
 	
-	public abstract void visitSoldado ( Soldado s);
+	public boolean puedePasar (ElementoAlien a );
+	
+	public boolean puedePasar (ElementoSoldado a );
+	
+	public boolean puedePasar (ElementoAgua a );
+	
+	public boolean puedePasar (ElementoFuego a );
+	
+	public boolean puedePasar (ElementoFuente a );
+	
+	public boolean puedePasar (ElementoPiedra a );
+	
+	
 
 }

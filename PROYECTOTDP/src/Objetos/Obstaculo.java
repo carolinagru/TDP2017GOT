@@ -8,11 +8,14 @@ import javax.swing.JLabel;
 
 import Graficos.PersonajeGrafico;
 import Principal.Celda;
+import Visitor.Elemento;
+import Visitor.Visitor;
 
 public abstract class Obstaculo {
 
 	protected PersonajeGrafico grafico;
 	protected Celda pos;
+	protected Elemento e;
 
 	
 
@@ -24,8 +27,16 @@ public abstract class Obstaculo {
 		return pos;
 	}
 	
+	public void actualizarGrafico() {
+	  grafico.actualizarGrafico();
+	}
+	
+	
 	public void setCelda(int x, int y) {
 		pos.set(x, y);
+	}
+	public Elemento getElement() {
+		return e;
 	}
 	
 }

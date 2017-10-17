@@ -95,7 +95,6 @@ public class Mapa_GUI2 extends JFrame {
 		contentPane.add(panel_3);
 		
 		logica = new Logica(panel_3);
-		//logica.setPanel(panel_3);
 
 		
 		// B O T O N E S     O B J E T O S--------------------------------------------------------------------------------------------------------------------------------------------------------------

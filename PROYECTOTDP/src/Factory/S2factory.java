@@ -21,6 +21,7 @@ protected JLabel l;
 	public Personaje createPersonaje (Celda c) {
 		Personaje p = new S2(c);
 		c.setElemento(p);
+		System.out.println("filas y columnas de factory "+c.getFila()+" "+c.getColumna());
 		l = p.getGrafico();
 		panel.add(l);
 		l.repaint();

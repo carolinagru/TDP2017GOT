@@ -56,8 +56,8 @@ public class Logica {
 	protected Mapa mapaCombate;
 	private static int tamanioCelda = 40;
 	protected PersonajesFactoryMethod factory;
-	protected static int height = 1000;
-	protected static int width= 500;
+	protected static int height = 500;
+	protected static int width= 1000;
 	protected JLabel l;
  
 
@@ -67,12 +67,13 @@ public class Logica {
 		puntos=0;
 		aliensMapa=new LinkedList();
 		soldadosMapa= new LinkedList();
-	    int columnas = ((height - 80 ) / tamanioCelda)+2;
-	    int filas = ((width - 40) / tamanioCelda)+1;
+	    int columnas = ((width - 80 ) / tamanioCelda)+2;
+	    int filas = ((height - 40) / tamanioCelda)+1;
 	    
-	     mapaCombate = new Mapa(filas,columnas,p);
-	     System.out.println("columnas de constructor de logica "+columnas+" filas de constructor de logica "+filas);
+	    System.out.println("columnas de constructor de logica "+columnas+" filas de constructor de logica "+filas);
 
+	     mapaCombate = new Mapa(filas,columnas,p);
+	    
 	     insertarObjetos();
 	}
 	

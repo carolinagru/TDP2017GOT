@@ -5,6 +5,7 @@ import java.awt.Point;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import Graficos.PersonajeGrafico;
 import Principal.Celda;
@@ -34,6 +35,7 @@ public abstract class Obstaculo {
 	
 	public void setCelda(int x, int y) {
 		pos.set(x, y);
+		grafico.setPoint(x,y);
 	}
 	public Elemento getElement() {
 		return e;

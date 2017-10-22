@@ -4,7 +4,7 @@ import Graficos.ObjetoAguaGrafico;
 import Principal.Celda;
 import Visitor.ElementoAgua;
 
-public class ObjetoAgua extends Objeto{
+public class ObjetoAgua extends ObjetoTemporal{
 
 	public ObjetoAgua(Celda c) {
 		super(c);

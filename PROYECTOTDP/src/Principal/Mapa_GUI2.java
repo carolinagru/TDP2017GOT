@@ -80,15 +80,15 @@ public class Mapa_GUI2 extends JFrame {
 		contentPane.add(panel_2);
 		panel_2.setLayout(null);
 		
-		//image = new ImageIcon(getClass().getResource("/Sprites/fondo/cesped.jpg")).getImage();
+		image = new ImageIcon(getClass().getResource("/Sprites/fondo/cesped.png")).getImage();
 
-		panel_3 = new JPanel();
-		/**public void paint(Graphics g){
+		panel_3 = new JPanel() {
+		public void paint(Graphics g){
 	        g.drawImage(image, 0, 0, panel_3.getWidth(), panel_3.getHeight(), this);
 	        setOpaque(false);
 	        super.paint(g);
 	    }
-		};**/
+		};
 		panel_3.setLayout(null);
 		panel_3.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_3.setBounds(334, 85, 1000, 500);
@@ -135,7 +135,6 @@ public class Mapa_GUI2 extends JFrame {
 						int y=e.getY() ;
 						int filas = y / 40;
 						int columnas = x  / 40;
-					 System.out.println("Creo un soldado en la posicion => Fila :"+filas + " - Columna :"+ columnas );
 					  logica.crearS1(filas,columnas);
 					   
 
@@ -154,7 +153,6 @@ public class Mapa_GUI2 extends JFrame {
 						int y=e.getY() ;
 						int filas = y / 40;
 						int columnas = x  / 40;
-						System.out.println("filas y columnas de gui "+filas+" "+columnas);
 					  logica.crearS2(filas,columnas);
 
 					}});

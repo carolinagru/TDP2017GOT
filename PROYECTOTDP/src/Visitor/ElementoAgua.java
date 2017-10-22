@@ -5,7 +5,19 @@ public class ElementoAgua implements Elemento{
 	@Override
 	public boolean dejoPasar(Visitor v) {
 		// TODO Auto-generated method stub
-		return v.puedePasar(this);
+		return v.puedoPasar(this);
+	}
+
+	@Override
+	public boolean dejoAtacar(Visitor v) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int sacarVida(Visitor v) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 

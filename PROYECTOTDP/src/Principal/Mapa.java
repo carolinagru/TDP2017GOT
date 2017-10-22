@@ -12,7 +12,6 @@ import javax.swing.JPanel;
 
 import Factory.A1factory;
 import Factory.PersonajesFactoryMethod;
-import Objetos.Objeto;
 import Objetos.ObjetoAgua;
 import Objetos.ObjetoFuego;
 import Objetos.ObjetoFuente;
@@ -41,7 +40,6 @@ public class Mapa {
 			}
 		}
 		objetosMapa= new LinkedList();
-		System.out.println("columnas de constructor de mapa "+columnas+" filas de mapa "+filas);
 	}
 	
 	public Celda getCelda(int x, int y){
@@ -87,6 +85,7 @@ public class Mapa {
 	                   
 	             if (obs != null){
 	            	 objetosMapa.addLast(obs); 
+	            	 obs.getCelda().setElemento(obs);
 	            	 insertar(obs.getGrafico());
 	             }
 	             obs=null;
@@ -100,8 +99,6 @@ public class Mapa {
    catch (IOException e) {
 	 System.out.println("Error en objeto - leerArchivo. ");
    }	 
-    
-        
 	}
 	
 	public void insertar(JLabel l) {
@@ -112,47 +109,22 @@ public class Mapa {
 	public Personaje insertarEnemigo(PersonajesFactoryMethod factory) {
 		Random r = new Random();
 		int x = (int ) (Math.random() * 11);
-		System.out.println("filas de insertarenemigo "+x);
 		Celda c = getCelda(x,24);
 		factory = new A1factory(panel);
 		Personaje p = factory.createPersonaje(c);
-		moverAlien(p);
 	  return p;
 	}
-	
+
 	public Celda siguienteCelda(Celda c) {
 		int col = c.getColumna()-1;		
 		return getCelda(c.getFila(),col);
 	}
 	
-	
-	public void moverAlien(Personaje p) {
-		
-
-	Celda c = p.getCelda();	
-	System.out.println("columnas de moverAlien  "+columnas);
-		for (int i = columnas; i > 1; i-- ) {
-			if (siguienteCelda(c).getElemento() == null) {
-				c = siguienteCelda(c);
-				p.setCelda(c.getFila(), c.getColumna());
-				c.setElemento(p);
-				p.actualizarGrafico();
-			
-				
-				
-				//insertar(p.getGrafico());
-			}		
-					
-		}
-	
-		
-	}
-	
-	public void eliminar(Personaje p) {
-		panel.remove(p.getGrafico());
+	public void eliminar(Obstaculo o) {
+		panel.remove(o.getGrafico());
 		panel.revalidate();
 		panel.repaint();
-		
+		o.getCelda().setElemento(null);
 	}
 	
 	

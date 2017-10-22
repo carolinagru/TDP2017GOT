@@ -2,12 +2,14 @@ package Objetos;
 
 import Principal.Celda;
 
-public class Objeto extends Obstaculo {
+public class ObjetoVida extends Obstaculo {
 	
-	public Objeto(Celda pos) {
+	
+	public ObjetoVida(Celda pos) {
 		this.pos = pos;
 		grafico = null;
 		
 	}
+
 
 }

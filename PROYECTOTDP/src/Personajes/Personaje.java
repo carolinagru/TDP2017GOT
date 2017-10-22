@@ -11,7 +11,6 @@ import Objetos.Obstaculo;
 
 public abstract class Personaje extends Obstaculo{
 	
-	protected float vida = 100;
 	public float fuerza;
 	protected int cantCeldas;
 	protected int distanciaAtaque;
@@ -24,14 +23,6 @@ public abstract class Personaje extends Obstaculo{
 		
 	}
 	
-	public  void setVida ( float v){
-		vida = v;
-	}
-	
-	public float getVida () {
-		return vida;
-	}
-	
 	public float getFuerza (){
 		return fuerza;
 	}
@@ -41,5 +32,6 @@ public abstract class Personaje extends Obstaculo{
 	public Elemento getElemento() {
 		return e;
 	}
+	
 	
 }

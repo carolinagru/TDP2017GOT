@@ -16,10 +16,9 @@ public abstract class Obstaculo {
 
 	protected PersonajeGrafico grafico;
 	protected Celda pos;
-	protected Elemento e;
-
+	protected Elemento e;	
+	protected static int vida=100;
 	
-
 	public JLabel getGrafico() {	
 		return grafico.getGrafico();
 	}
@@ -39,6 +38,13 @@ public abstract class Obstaculo {
 	}
 	public Elemento getElement() {
 		return e;
+	}
+	
+	public void setVida(int i) {
+		vida-=i;
+	}
+	public int getVida() {
+		return vida;
 	}
 	
 }

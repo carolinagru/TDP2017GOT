@@ -13,8 +13,8 @@ public class PersonajeGrafico {
 
 	protected JLabel label; 
 	protected Icon image;
-	protected int width=40;
-	protected int height=40;
+	protected int width=80;
+	protected int height=80;
 	protected Point pos;
 
 	public PersonajeGrafico( int fila, int columna ) {

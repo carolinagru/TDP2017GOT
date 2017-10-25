@@ -108,8 +108,8 @@ public class Mapa {
 	
 	public Personaje insertarEnemigo(PersonajesFactoryMethod factory) {
 		Random r = new Random();
-		int x = (int ) (Math.random() * 11);
-		Celda c = getCelda(x,24);
+		int x = (int ) (Math.random() * 5);
+		Celda c = getCelda(x,11);
 		factory = new A1factory(panel);
 		Personaje p = factory.createPersonaje(c);
 	  return p;

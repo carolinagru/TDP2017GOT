@@ -40,7 +40,7 @@ public class Logica {
 	protected LinkedList<Personaje> soldadosMapa;
 	protected JPanel panelMapa;
 	protected Mapa mapaCombate;
-	private static int tamanioCelda = 40;
+	private static int tamanioCelda = 80;
 	protected PersonajesFactoryMethod factory;
 	protected static int height = 500;
 	protected static int width= 1000;
@@ -59,8 +59,8 @@ public class Logica {
 	    System.out.println("columnas de constructor de logica "+columnas+" filas de constructor de logica "+filas);
 
 	     mapaCombate = new Mapa(filas,columnas,p);
-	    
-	     insertarObjetos();
+	    activarMenu();
+	   //  insertarObjetos();
 	     
 	}
 	

@@ -12,6 +12,8 @@ public class Celda {
 		columna=c;
 		
 	}
+	
+	
 	public Obstaculo getElemento() {
 		return elemento;
 	}

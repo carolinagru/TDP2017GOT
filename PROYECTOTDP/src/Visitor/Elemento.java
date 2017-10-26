@@ -1,5 +1,5 @@
 package Visitor;
-
+///gndfign
 public interface Elemento {
 
 	public boolean dejoPasar(Visitor v);

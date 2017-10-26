@@ -4,6 +4,8 @@ package Personajes;
 import Principal.Celda;
 import Visitor.*;
 
+import java.awt.Point;
+
 import javax.swing.JLabel;
 
 import Graficos.PersonajeGrafico;
@@ -34,4 +36,8 @@ public abstract class Personaje extends Obstaculo{
 	}
 	
 	
+<<<<<<< HEAD
+	
+=======
+>>>>>>> 70f8a96bba14d2261f7f059e4df897051d21e778
 }

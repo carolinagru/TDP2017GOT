@@ -53,6 +53,34 @@ public class Logica {
 		puntos=0;
 		aliensMapa=new LinkedList();
 		soldadosMapa= new LinkedList();
+<<<<<<< HEAD
+	    int columnas = ((height - 80 ) / tamanioCelda)+2; 
+	    int filas =  ((width - 40) / tamanioCelda)+1;
+	    
+ 
+	     mapaCombate = new Mapa(filas,columnas,p);
+	     System.out.println("CONSTRUCTOR  de logica "+columnas+" filas de constructor de logica "+filas);
+
+	     insertarObjetos();
+	     Celda c = mapaCombate.getCelda(10, 10);
+	     crearA1(10, 1);
+	     //Pruebo mover alien
+	     
+	     
+        Personaje per = aliensMapa.getLast();
+	     //System.out.println("Vida del alien"+per.getFuerza());
+	     mapaCombate.moverAlien(per);
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+=======
 	    columnas = ((width - 80 ) / tamanioCelda)+2;
 	    int filas = ((height - 40) / tamanioCelda)+1;
 	    
@@ -61,6 +89,7 @@ public class Logica {
 	     mapaCombate = new Mapa(filas,columnas,p);
 	    activarMenu();
 	   //  insertarObjetos();
+>>>>>>> 70f8a96bba14d2261f7f059e4df897051d21e778
 	     
 	}
 	
@@ -76,6 +105,18 @@ public class Logica {
 	}
 	
 	public void insertarEnemigos() {
+<<<<<<< HEAD
+ /**
+	 t1 = new Timer (5000, new ActionListener (){
+	          public void actionPerformed(ActionEvent e){
+	         	if(aliensMapa.size() < 2)
+	         		aliensMapa.addLast(mapaCombate.insertarEnemigo(factory));
+	          }
+	      });
+	   t1.start();
+ **/
+ }
+=======
 	 t1 = new Timer (5000, new ActionListener (){
 	     public void actionPerformed(ActionEvent e){
 	       	if(aliensMapa.size() < 4)
@@ -120,6 +161,7 @@ public class Logica {
 			}		
 		}
 	}
+>>>>>>> 70f8a96bba14d2261f7f059e4df897051d21e778
 	
 	public void atacarEnemigo(Personaje p, Obstaculo o) {
 		t3 = new Timer (200, new ActionListener (){
@@ -164,6 +206,17 @@ public class Logica {
 		soldadosMapa.addLast(factory.createPersonaje(c));
 	}
 	
+<<<<<<< HEAD
+	public void crearA1(int x, int y) {
+		Celda c = mapaCombate.getCelda(x, y);
+		factory = new A1factory(panelMapa);
+		aliensMapa.addLast(factory.createPersonaje(c));
+
+	}
+	
+	
+=======
+>>>>>>> 70f8a96bba14d2261f7f059e4df897051d21e778
 	public void verificarPosicion(int x, int y) {
 		Celda c= mapaCombate.getCelda(x, y);
 		

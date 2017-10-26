@@ -67,13 +67,33 @@ public class Logica {
 		puntos=0;
 		aliensMapa=new LinkedList();
 		soldadosMapa= new LinkedList();
-	    int columnas = ((height - 80 ) / tamanioCelda)+2;
-	    int filas = ((width - 40) / tamanioCelda)+1;
+	    int columnas = ((height - 80 ) / tamanioCelda)+2; 
+	    int filas =  ((width - 40) / tamanioCelda)+1;
 	    
+ 
 	     mapaCombate = new Mapa(filas,columnas,p);
-	     System.out.println("columnas de constructor de logica "+columnas+" filas de constructor de logica "+filas);
+	     System.out.println("CONSTRUCTOR  de logica "+columnas+" filas de constructor de logica "+filas);
 
 	     insertarObjetos();
+	     Celda c = mapaCombate.getCelda(10, 10);
+	     crearA1(10, 1);
+	     //Pruebo mover alien
+	     
+	     
+        Personaje per = aliensMapa.getLast();
+	     //System.out.println("Vida del alien"+per.getFuerza());
+	     mapaCombate.moverAlien(per);
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
 	}
 	
 	public void insertarObjetos() {
@@ -87,7 +107,7 @@ public class Logica {
 	}
 	
 	public void insertarEnemigos() {
-		
+ /**
 	 t1 = new Timer (5000, new ActionListener (){
 	          public void actionPerformed(ActionEvent e){
 	         	if(aliensMapa.size() < 2)
@@ -95,8 +115,8 @@ public class Logica {
 	          }
 	      });
 	   t1.start();
-
-	}
+ **/
+ }
 	
 	
 	public void crearS1(int x, int y) {
@@ -130,6 +150,13 @@ public class Logica {
 		Celda c = mapaCombate.getCelda(x, y);
 		factory = new S5factory(panelMapa);
 		soldadosMapa.addLast(factory.createPersonaje(c));
+
+	}
+	
+	public void crearA1(int x, int y) {
+		Celda c = mapaCombate.getCelda(x, y);
+		factory = new A1factory(panelMapa);
+		aliensMapa.addLast(factory.createPersonaje(c));
 
 	}
 	

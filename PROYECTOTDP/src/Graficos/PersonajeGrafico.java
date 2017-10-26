@@ -5,6 +5,7 @@ import java.awt.Point;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
  
 public class PersonajeGrafico {
 
@@ -19,8 +20,16 @@ public class PersonajeGrafico {
 	public PersonajeGrafico( int fila, int columna ) {
 		pos = new Point(fila * this.width, columna * this.height);
 	}
+	
+	public Point getPoint (){
+		return pos;
+	}
+	
+	public void setPoint ( int x, int y ) {
+		pos = new Point ( x,y);
+	}
 		
-		
+	
 	public JLabel getGrafico() {
 		label= new JLabel(image);
 		this.label.setBounds(this.pos.x, this.pos.y, 55, 55); 
@@ -30,13 +39,25 @@ public class PersonajeGrafico {
 		return label;
 	}
 	
-	public void actualizarGrafico(){		
-		
+	public void actualizarGrafico(JPanel p){	
+		 
+			System.out.println("Entre a actualizar grafico");
 		   ImageIcon aux=(ImageIcon) image;
+		   
 		   Icon icono = new ImageIcon(aux.getImage().getScaledInstance(label.getWidth(), label.getWidth(), Image.SCALE_DEFAULT));
 		   label.setIcon(icono);
-		   label.setBounds(pos.x, pos.y, width, height);
+		
+		 
+		   label.setBounds(pos.x-55, pos.y, width, height);
+		   setPoint(pos.x-55,pos.y);
+		   p.add(label);
+		   p.repaint();
+		 //  setPoint(pos.x-55, pos.y+55);
+		    
+ 
 		}
+		
 }
+	
 
  

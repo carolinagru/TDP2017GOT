@@ -9,6 +9,4 @@ public class Soldado1Grafico extends PersonajeGrafico{
 			super(x, y);
 			image = new ImageIcon(this.getClass().getResource("/Sprites/Sprite Soldado/GIF's/Soldado Disparando.gif"));
 	}
-	
-
 }

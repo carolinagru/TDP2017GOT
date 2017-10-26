@@ -1,5 +1,7 @@
 package Personajes;
 
+import java.awt.Point;
+
 import Premios.Premio;
 import Principal.Celda;
 import Visitor.*;

@@ -29,19 +29,19 @@ public class Mapa {
 	protected Obstaculo obs;
 	protected JPanel panel;
 
-	public Mapa(int c, int f, JPanel p){
+	public Mapa(int f, int c, JPanel p){
 		this.filas = f;
 		this.columnas = c;
 		panel = p;
 		this.mapa = new Celda[filas][columnas];
-		
+		System.out.println("Creo una matriz COLUMNAS -> "+columnas +" FILAS -> " + filas );
 		for(int i = 0; i < filas; i++){
 			for(int j = 0; j < columnas; j++){
 				this.mapa[i][j] = new Celda( i, j);
 			}
-		}
+		} 
 		objetosMapa= new LinkedList();
-
+		 
 	}
 	
 	public Celda getCelda(int x, int y){
@@ -120,13 +120,16 @@ public class Mapa {
 	}
 	
 	public Celda siguienteCelda(Celda c) {
-		int col = c.getFila()-1;		
-		return getCelda(col,c.getColumna());
+		int col = c.getColumna()-1;		
+		return getCelda(c.getFila(),col);
 	}
 	
 	public void moverAlien(Personaje p) {
-		
-	Celda c = p.getCelda();	
+	System.out.println("Entre a mover");;
+	HiloMoverAlien h = new HiloMoverAlien (p.getCelda(), this,panel);
+	h.run();
+	/**
+	Celda c = p.getCelda();
 	
 		for (int i = 0; i < columnas; i++ ) {
 			if (siguienteCelda(c).getElemento() == null) {
@@ -137,7 +140,7 @@ public class Mapa {
 			}		
 					
 		}
-		
+	**/
 	}
 	
 	public void eliminar(Personaje p) {

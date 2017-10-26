@@ -8,7 +8,7 @@ public class ObjetoFuenteGrafico extends PersonajeGrafico{
 		super(fila, columna);
 		
 		//cambiar imagen 
-		image = new ImageIcon(this.getClass().getResource("/Sprites/objetos/fuego.jpg"));
+		image = new ImageIcon(this.getClass().getResource("/Sprites/objetos/fuego.gif"));
 
 	}
 

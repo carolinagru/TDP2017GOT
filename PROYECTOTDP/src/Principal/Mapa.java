@@ -33,13 +33,17 @@ public class Mapa {
 		this.columnas = c;
 		panel = p;
 		this.mapa = new Celda[filas][columnas];
-		
+		System.out.println("Creo una matriz COLUMNAS -> "+columnas +" FILAS -> " + filas );
 		for(int i = 0; i < filas; i++){
 			for(int j = 0; j < columnas; j++){
 				this.mapa[i][j] = new Celda( i, j);
 			}
-		}
+		} 
 		objetosMapa= new LinkedList();
+<<<<<<< HEAD
+		 
+=======
+>>>>>>> 70f8a96bba14d2261f7f059e4df897051d21e778
 	}
 	
 	public Celda getCelda(int x, int y){
@@ -108,8 +112,8 @@ public class Mapa {
 	
 	public Personaje insertarEnemigo(PersonajesFactoryMethod factory) {
 		Random r = new Random();
-		int x = (int ) (Math.random() * 11);
-		Celda c = getCelda(x,24);
+		int x = (int ) (Math.random() * 5);
+		Celda c = getCelda(x,11);
 		factory = new A1factory(panel);
 		Personaje p = factory.createPersonaje(c);
 	  return p;
@@ -120,8 +124,32 @@ public class Mapa {
 		return getCelda(c.getFila(),col);
 	}
 	
+<<<<<<< HEAD
+	public void moverAlien(Personaje p) {
+	System.out.println("Entre a mover");;
+	HiloMoverAlien h = new HiloMoverAlien (p.getCelda(), this,panel);
+	h.run();
+	/**
+	Celda c = p.getCelda();
+	
+		for (int i = 0; i < columnas; i++ ) {
+			if (siguienteCelda(c).getElemento() == null) {
+				c = siguienteCelda(c);
+				p.setCelda(c.getColumna(), c.getFila());
+				c.setElemento(p);
+				p.actualizarGrafico();
+			}		
+					
+		}
+	**/
+	}
+	
+	public void eliminar(Personaje p) {
+		panel.remove(p.getGrafico());
+=======
 	public void eliminar(Obstaculo o) {
 		panel.remove(o.getGrafico());
+>>>>>>> 70f8a96bba14d2261f7f059e4df897051d21e778
 		panel.revalidate();
 		panel.repaint();
 		o.getCelda().setElemento(null);

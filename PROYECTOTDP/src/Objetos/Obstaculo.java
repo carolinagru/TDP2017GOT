@@ -16,9 +16,19 @@ public abstract class Obstaculo {
 
 	protected PersonajeGrafico grafico;
 	protected Celda pos;
+<<<<<<< HEAD
+	protected Elemento e;
+	protected Point p;
+
+	public PersonajeGrafico getPersonajeGrafico () {
+		return grafico;
+	}
+
+=======
 	protected Elemento e;	
 	protected static int vida=100;
 	
+>>>>>>> 70f8a96bba14d2261f7f059e4df897051d21e778
 	public JLabel getGrafico() {	
 		return grafico.getGrafico();
 	}
@@ -27,8 +37,8 @@ public abstract class Obstaculo {
 		return pos;
 	}
 	
-	public void actualizarGrafico() {
-	  grafico.actualizarGrafico();
+	public void actualizarGrafico(JPanel p) {
+	  grafico.actualizarGrafico(p);
 	}
 	
 	
@@ -40,6 +50,14 @@ public abstract class Obstaculo {
 		return e;
 	}
 	
+<<<<<<< HEAD
+	public void actualizarPosicion (int x, int y ) {
+		grafico.getGrafico().setBounds(x, y, 55, 55);
+		
+	}
+	
+
+=======
 	public void setVida(int i) {
 		vida-=i;
 	}
@@ -47,4 +65,5 @@ public abstract class Obstaculo {
 		return vida;
 	}
 	
+>>>>>>> 70f8a96bba14d2261f7f059e4df897051d21e778
 }

@@ -12,7 +12,6 @@ import javax.swing.JPanel;
 
 import Factory.A1factory;
 import Factory.PersonajesFactoryMethod;
-import Objetos.Objeto;
 import Objetos.ObjetoAgua;
 import Objetos.ObjetoFuego;
 import Objetos.ObjetoFuente;
@@ -41,7 +40,10 @@ public class Mapa {
 			}
 		} 
 		objetosMapa= new LinkedList();
+<<<<<<< HEAD
 		 
+=======
+>>>>>>> 70f8a96bba14d2261f7f059e4df897051d21e778
 	}
 	
 	public Celda getCelda(int x, int y){
@@ -74,7 +76,7 @@ public class Mapa {
         		int x = 0;
 	        	for (int i = 0; i < cadena.length(); i++){
 	      		   d = cadena.charAt(i);
-	      		   Celda c = getCelda(y,x);
+	      		   Celda c = getCelda(x,y);
 	                if (d == 'f')
 	                  obs= new ObjetoFuego(c);
 	                	else if (d == 'a')
@@ -87,6 +89,7 @@ public class Mapa {
 	                   
 	             if (obs != null){
 	            	 objetosMapa.addLast(obs); 
+	            	 obs.getCelda().setElemento(obs);
 	            	 insertar(obs.getGrafico());
 	             }
 	             obs=null;
@@ -100,8 +103,6 @@ public class Mapa {
    catch (IOException e) {
 	 System.out.println("Error en objeto - leerArchivo. ");
    }	 
-    
-        
 	}
 	
 	public void insertar(JLabel l) {
@@ -111,19 +112,19 @@ public class Mapa {
 	
 	public Personaje insertarEnemigo(PersonajesFactoryMethod factory) {
 		Random r = new Random();
-		int x = (int ) (Math.random() * 11);
-		Celda c = getCelda(24,x);
+		int x = (int ) (Math.random() * 5);
+		Celda c = getCelda(x,11);
 		factory = new A1factory(panel);
 		Personaje p = factory.createPersonaje(c);
-		moverAlien(p);
 	  return p;
 	}
-	
+
 	public Celda siguienteCelda(Celda c) {
 		int col = c.getColumna()-1;		
 		return getCelda(c.getFila(),col);
 	}
 	
+<<<<<<< HEAD
 	public void moverAlien(Personaje p) {
 	System.out.println("Entre a mover");;
 	HiloMoverAlien h = new HiloMoverAlien (p.getCelda(), this,panel);
@@ -145,9 +146,13 @@ public class Mapa {
 	
 	public void eliminar(Personaje p) {
 		panel.remove(p.getGrafico());
+=======
+	public void eliminar(Obstaculo o) {
+		panel.remove(o.getGrafico());
+>>>>>>> 70f8a96bba14d2261f7f059e4df897051d21e778
 		panel.revalidate();
 		panel.repaint();
-		
+		o.getCelda().setElemento(null);
 	}
 	
 	

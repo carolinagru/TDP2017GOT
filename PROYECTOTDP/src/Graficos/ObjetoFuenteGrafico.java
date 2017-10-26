@@ -8,7 +8,7 @@ public class ObjetoFuenteGrafico extends PersonajeGrafico{
 		super(fila, columna);
 		
 		//cambiar imagen 
-		image = new ImageIcon(this.getClass().getResource("/Sprites/Alien Caminando/2.png"));
+		image = new ImageIcon(this.getClass().getResource("/Sprites/objetos/fuego.gif"));
 
 	}
 
